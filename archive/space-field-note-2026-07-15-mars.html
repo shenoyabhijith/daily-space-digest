@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Space Field Note — Mars</title>
+  <style>
+    :root { --h:160; --ink:#101828; --muted:#667085; --paper:#fffaf0; --line:#eadfc9; --accent:hsl(var(--h), 82%, 42%); --accent2:hsl(calc(var(--h) + 42), 80%, 50%); }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; color:var(--ink); background: radial-gradient(circle at top left, hsl(var(--h), 90%, 92%), transparent 32rem), linear-gradient(135deg, #fffdf7, #f5f7fb 55%, #eef6ff); }
+    .wrap { max-width: 1120px; margin:0 auto; padding: 34px 22px 60px; }
+    .mast { display:flex; gap:18px; align-items:center; margin-bottom:24px; }
+    .badge { width:58px; height:58px; border-radius:19px; display:grid; place-items:center; color:white; font-size:30px; background:linear-gradient(135deg,var(--accent),var(--accent2)); box-shadow:0 18px 40px rgba(16,24,40,.18); }
+    .kicker { color:var(--accent); font-weight:800; letter-spacing:.16em; text-transform:uppercase; font-size:12px; }
+    h1 { font-size: clamp(42px, 8vw, 88px); line-height:.9; margin:8px 0 12px; letter-spacing:-.07em; }
+    .subtitle { font-size: clamp(20px, 3vw, 34px); color:#344054; margin:0; max-width:900px; }
+    .hero { margin-top:28px; display:grid; grid-template-columns: 1.25fr .75fr; gap:22px; align-items:stretch; }
+    .image-card, .card { border:1px solid rgba(16,24,40,.10); background:rgba(255,255,255,.78); backdrop-filter: blur(14px); border-radius:32px; overflow:hidden; box-shadow:0 20px 50px rgba(16,24,40,.10); }
+    .image-card img { display:block; width:100%; height:520px; object-fit:cover; background:#111827; }
+    .caption { padding:18px 22px; color:var(--muted); font-size:14px; }
+    .card { padding:26px; }
+    .eyebrow { color:var(--accent); font-weight:900; letter-spacing:.12em; text-transform:uppercase; font-size:12px; }
+    h2 { font-size:30px; letter-spacing:-.03em; margin:8px 0 12px; }
+    p { font-size:17px; line-height:1.65; }
+    .stats { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:12px; margin-top:18px; }
+    .stat { padding:14px; background:#fff; border:1px solid var(--line); border-radius:18px; }
+    .stat span { display:block; color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.08em; font-weight:800; }
+    .stat strong { display:block; margin-top:4px; font-size:18px; }
+    .grid { display:grid; grid-template-columns: 1fr 1fr; gap:22px; margin-top:22px; }
+    .composition { border-left:8px solid var(--accent); }
+    .spark { font-size:20px; padding:18px; border-radius:22px; background:linear-gradient(135deg, hsl(var(--h), 92%, 94%), #fff); border:1px solid var(--line); }
+    .sources ul { margin:12px 0 0; padding-left:20px; }
+    a { color:var(--accent); font-weight:800; }
+    .button { display:inline-block; margin-top:10px; padding:11px 14px; border-radius:999px; color:white; text-decoration:none; background:linear-gradient(135deg,var(--accent),var(--accent2)); }
+    .ghost { background:#fff; border:1px solid var(--line); color:var(--accent); }
+    .footer { margin-top:28px; color:var(--muted); font-size:13px; }
+    @media (max-width: 820px) { .hero,.grid { grid-template-columns:1fr; } .image-card img { height:360px; } .stats { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="mast">
+      <div class="badge">☄️</div>
+      <div>
+        <div class="kicker">Daily Space Field Note · Wednesday, July 15, 2026</div>
+        <h1>Mars</h1>
+        <p class="subtitle">The rusty archive of a wetter world</p>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="image-card">
+        <img src="https://images-assets.nasa.gov/image/PIA25681/PIA25681~medium.jpg" alt="Perseverance&#x27;s Three Forks Sample Depot Selfie">
+        <div class="caption"><strong>Perseverance&#x27;s Three Forks Sample Depot Selfie</strong><br>NASA&#x27;s Perseverance Mars rover took a selfie with several of the 10 sample tubes it deposited at a sample depot it is creating within an area of Jezero Crater nicknamed &quot;Three Forks.&quot; The image was taken by the WATSON (Wide Angle Topographic Sensor for Operations and eNgineering) camera on the end of the rover&#x27;s robotic arm on Jan. 22, 2023, the 684th Martian day, or sol, of the mission. The ninth tube dropped during the construction of the depot</div>
+      </div>
+      <aside class="card">
+        <div class="eyebrow">Quick scan</div>
+        <h2>What is it made of?</h2>
+        <p>Basaltic rock rich in iron-bearing minerals; iron oxides give Mars its red color. Its thin atmosphere is mostly carbon dioxide, with dust that can spread planet-wide.</p>
+        <div class="stats"><div class="stat"><span>Diameter</span><strong>6,779 km</strong></div>
+<div class="stat"><span>Day</span><strong>24.6 hours</strong></div>
+<div class="stat"><span>Atmosphere</span><strong>~95% CO₂</strong></div>
+<div class="stat"><span>Gravity</span><strong>0.38 g</strong></div></div>
+      </aside>
+    </section>
+
+    <section class="grid">
+      <article class="card composition">
+        <div class="eyebrow">Why it’s fascinating</div>
+        <h2>The hook</h2>
+        <div class="spark">Mars is a crime scene for planetary scientists: dry river valleys, lake beds, clays, and minerals all hint that liquid water once shaped the planet. The question is whether chemistry ever crossed into biology.</div>
+      </article>
+      <article class="card">
+        <div class="eyebrow">Imagine this</div>
+        <h2>A tiny thought experiment</h2>
+        <p>Stand above Mars with a transparent science visor. The colors are not just scenery — they are chemistry: gases, minerals, sunlight, and temperature writing a planetary fingerprint in front of you.</p>
+      </article>
+    </section>
+
+    
+        <section class="apod card">
+          <div class="eyebrow">NASA APOD side quest</div>
+          <h2>Red Sprites in the Tatacoa Desert</h2>
+          <p>Is there an angry Sith using force lightning in the Tatacoa Desert? This is not science fiction, but a red sprite with multiple streamers! Ordinary lightning occurs when thundercloud particles collide, lose their electrons, and build up negative charge at the cloud bottom. The cloud’s negative charge repels negative charge deeper into the Earth, leaving Earth’s surface positively charged. The opposite charges attract, reaching towards each other and superheating the air into a white strike of plasma. Red sprites are millisecond events triggered by positive cloud-to-ground lightning. They extend up into the mesosphere where the air is too thin</p>
+          <a class="button ghost" href="https://apod.nasa.gov/apod/">Open NASA APOD</a>
+        </section>
+        
+
+    <section class="sources card">
+      <div class="eyebrow">Legit source trail</div>
+      <h2>Where this came from</h2>
+      <p>Primary references are NASA/JPL/ISRO or mission/science pages. Image search uses NASA’s public Image and Video Library; APOD uses NASA Astronomy Picture of the Day.</p>
+      <ul><li><a href="https://science.nasa.gov/mars/">NASA Solar System Exploration — Mars</a></li>
+<li><a href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html">NASA NSSDC Mars Fact Sheet</a></li>
+<li><a href="https://www.isro.gov.in/MarsOrbiterMissionSpacecraft.html">ISRO Mars Orbiter Mission</a></li>
+<li><a href="https://images.nasa.gov/search-results?q=Mars%20surface%20rover%20NASA%20Perseverance%20Curiosity%20Jezero%20crater">NASA Image and Video Library</a></li>
+<li><a href="https://apod.nasa.gov/apod/">NASA Astronomy Picture of the Day</a></li></ul>
+    </section>
+    <div class="footer">Generated locally by Hermes Agent. External images remain credited to their source pages. Archive path: /opt/data/home/space-digest/</div>
+  </main>
+</body>
+</html>

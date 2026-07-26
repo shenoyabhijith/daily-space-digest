@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Space Field Note — Comet 67P/Churyumov–Gerasimenko</title>
+  <style>
+    :root { --h:10; --ink:#101828; --muted:#667085; --paper:#fffaf0; --line:#eadfc9; --accent:hsl(var(--h), 82%, 42%); --accent2:hsl(calc(var(--h) + 42), 80%, 50%); }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; color:var(--ink); background: radial-gradient(circle at top left, hsl(var(--h), 90%, 92%), transparent 32rem), linear-gradient(135deg, #fffdf7, #f5f7fb 55%, #eef6ff); }
+    .wrap { max-width: 1120px; margin:0 auto; padding: 34px 22px 60px; }
+    .mast { display:flex; gap:18px; align-items:center; margin-bottom:24px; }
+    .badge { width:58px; height:58px; border-radius:19px; display:grid; place-items:center; color:white; font-size:30px; background:linear-gradient(135deg,var(--accent),var(--accent2)); box-shadow:0 18px 40px rgba(16,24,40,.18); }
+    .kicker { color:var(--accent); font-weight:800; letter-spacing:.16em; text-transform:uppercase; font-size:12px; }
+    h1 { font-size: clamp(42px, 8vw, 88px); line-height:.9; margin:8px 0 12px; letter-spacing:-.07em; }
+    .subtitle { font-size: clamp(20px, 3vw, 34px); color:#344054; margin:0; max-width:900px; }
+    .hero { margin-top:28px; display:grid; grid-template-columns: 1.25fr .75fr; gap:22px; align-items:stretch; }
+    .image-card, .card { border:1px solid rgba(16,24,40,.10); background:rgba(255,255,255,.78); backdrop-filter: blur(14px); border-radius:32px; overflow:hidden; box-shadow:0 20px 50px rgba(16,24,40,.10); }
+    .image-card img { display:block; width:100%; height:520px; object-fit:cover; background:#111827; }
+    .caption { padding:18px 22px; color:var(--muted); font-size:14px; }
+    .card { padding:26px; }
+    .eyebrow { color:var(--accent); font-weight:900; letter-spacing:.12em; text-transform:uppercase; font-size:12px; }
+    h2 { font-size:30px; letter-spacing:-.03em; margin:8px 0 12px; }
+    p { font-size:17px; line-height:1.65; }
+    .stats { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:12px; margin-top:18px; }
+    .stat { padding:14px; background:#fff; border:1px solid var(--line); border-radius:18px; }
+    .stat span { display:block; color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.08em; font-weight:800; }
+    .stat strong { display:block; margin-top:4px; font-size:18px; }
+    .grid { display:grid; grid-template-columns: 1fr 1fr; gap:22px; margin-top:22px; }
+    .composition { border-left:8px solid var(--accent); }
+    .spark { font-size:20px; padding:18px; border-radius:22px; background:linear-gradient(135deg, hsl(var(--h), 92%, 94%), #fff); border:1px solid var(--line); }
+    .sources ul { margin:12px 0 0; padding-left:20px; }
+    a { color:var(--accent); font-weight:800; }
+    .button { display:inline-block; margin-top:10px; padding:11px 14px; border-radius:999px; color:white; text-decoration:none; background:linear-gradient(135deg,var(--accent),var(--accent2)); }
+    .ghost { background:#fff; border:1px solid var(--line); color:var(--accent); }
+    .footer { margin-top:28px; color:var(--muted); font-size:13px; }
+    @media (max-width: 820px) { .hero,.grid { grid-template-columns:1fr; } .image-card img { height:360px; } .stats { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="mast">
+      <div class="badge">☄️</div>
+      <div>
+        <div class="kicker">Daily Space Field Note · Wednesday, July 1, 2026</div>
+        <h1>Comet 67P/Churyumov–Gerasimenko</h1>
+        <p class="subtitle">A dark icy time capsule with cliffs and jets</p>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="image-card">
+        <img src="https://apod.nasa.gov/apod/image/2607/rho_ophiuchi_1024.png" alt="The Cotton Candy Clouds of Rho Ophiuchi">
+        <div class="caption"><strong>The Cotton Candy Clouds of Rho Ophiuchi</strong><br>Although they look like cotton candy, you cannot eat these clouds! Taken in Cádiz, Spain, today&#x27;s image features the Rho Ophiuchi complex, a rich tapestry of young and old astronomical phenomena. This colorful cloud complex is a nearby star-forming region containing hundreds of young stellar objects, including protostars and T Tauri stars. Light from the triple star system at its center reflects off of small dust grains to create the blue reflection nebula. Ultraviolet light from hot stars ionizes the surrounding hydrogen gas, creating the red emission nebula. Antares, a red supergiant big enough to engulf the Solar System’s asteroid belt, li</div>
+      </div>
+      <aside class="card">
+        <div class="eyebrow">Quick scan</div>
+        <h2>What is it made of?</h2>
+        <p>A porous mixture of water ice, dust, organic-rich dark material, and volatile compounds. Sunlight warms the nucleus and drives gas/dust jets that form the coma and tails.</p>
+        <div class="stats"><div class="stat"><span>Nucleus</span><strong>~4 km wide</strong></div>
+<div class="stat"><span>Type</span><strong>Jupiter-family comet</strong></div>
+<div class="stat"><span>Surface</span><strong>dark organic-rich dust</strong></div>
+<div class="stat"><span>Visited by</span><strong>Rosetta/Philae</strong></div></div>
+      </aside>
+    </section>
+
+    <section class="grid">
+      <article class="card composition">
+        <div class="eyebrow">Why it’s fascinating</div>
+        <h2>The hook</h2>
+        <div class="spark">Comets are messy refrigerators from the early Solar System. 67P looks like a rubber duck, but its jets, pits, and cliffs tell a story of ancient ice slowly waking near the Sun.</div>
+      </article>
+      <article class="card">
+        <div class="eyebrow">Imagine this</div>
+        <h2>A tiny thought experiment</h2>
+        <p>Approach Comet 67P/Churyumov–Gerasimenko as sunlight hits it. Ice turns straight to gas, dust lifts away, and a sleeping fossil starts drawing a tail across space.</p>
+      </article>
+    </section>
+
+    
+        <section class="apod card">
+          <div class="eyebrow">NASA APOD side quest</div>
+          <h2>The Cotton Candy Clouds of Rho Ophiuchi</h2>
+          <p>Although they look like cotton candy, you cannot eat these clouds! Taken in Cádiz, Spain, today&#x27;s image features the Rho Ophiuchi complex, a rich tapestry of young and old astronomical phenomena. This colorful cloud complex is a nearby star-forming region containing hundreds of young stellar objects, including protostars and T Tauri stars. Light from the triple star system at its center reflects off of small dust grains to create the blue reflection nebula. Ultraviolet light from hot stars ionizes the surrounding hydrogen gas, creating the red emission nebula. Antares, a red supergiant big enough to engulf the Solar System’s asteroid belt, li</p>
+          <a class="button ghost" href="https://apod.nasa.gov/apod/">Open NASA APOD</a>
+        </section>
+        
+
+    <section class="sources card">
+      <div class="eyebrow">Legit source trail</div>
+      <h2>Where this came from</h2>
+      <p>Primary references are NASA/JPL/ISRO or mission/science pages. Image search uses NASA’s public Image and Video Library; APOD uses NASA Astronomy Picture of the Day.</p>
+      <ul><li><a href="https://science.nasa.gov/solar-system/comets/">NASA comet science</a></li>
+<li><a href="https://www.esa.int/Science_Exploration/Space_Science/Rosetta">ESA Rosetta mission</a></li>
+<li><a href="https://apod.nasa.gov/apod/">NASA Astronomy Picture of the Day</a></li></ul>
+    </section>
+    <div class="footer">Generated locally by Hermes Agent. External images remain credited to their source pages. Archive path: /opt/data/home/space-digest/</div>
+  </main>
+</body>
+</html>

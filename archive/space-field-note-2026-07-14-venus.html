@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Space Field Note — Venus</title>
+  <style>
+    :root { --h:79; --ink:#101828; --muted:#667085; --paper:#fffaf0; --line:#eadfc9; --accent:hsl(var(--h), 82%, 42%); --accent2:hsl(calc(var(--h) + 42), 80%, 50%); }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; color:var(--ink); background: radial-gradient(circle at top left, hsl(var(--h), 90%, 92%), transparent 32rem), linear-gradient(135deg, #fffdf7, #f5f7fb 55%, #eef6ff); }
+    .wrap { max-width: 1120px; margin:0 auto; padding: 34px 22px 60px; }
+    .mast { display:flex; gap:18px; align-items:center; margin-bottom:24px; }
+    .badge { width:58px; height:58px; border-radius:19px; display:grid; place-items:center; color:white; font-size:30px; background:linear-gradient(135deg,var(--accent),var(--accent2)); box-shadow:0 18px 40px rgba(16,24,40,.18); }
+    .kicker { color:var(--accent); font-weight:800; letter-spacing:.16em; text-transform:uppercase; font-size:12px; }
+    h1 { font-size: clamp(42px, 8vw, 88px); line-height:.9; margin:8px 0 12px; letter-spacing:-.07em; }
+    .subtitle { font-size: clamp(20px, 3vw, 34px); color:#344054; margin:0; max-width:900px; }
+    .hero { margin-top:28px; display:grid; grid-template-columns: 1.25fr .75fr; gap:22px; align-items:stretch; }
+    .image-card, .card { border:1px solid rgba(16,24,40,.10); background:rgba(255,255,255,.78); backdrop-filter: blur(14px); border-radius:32px; overflow:hidden; box-shadow:0 20px 50px rgba(16,24,40,.10); }
+    .image-card img { display:block; width:100%; height:520px; object-fit:cover; background:#111827; }
+    .caption { padding:18px 22px; color:var(--muted); font-size:14px; }
+    .card { padding:26px; }
+    .eyebrow { color:var(--accent); font-weight:900; letter-spacing:.12em; text-transform:uppercase; font-size:12px; }
+    h2 { font-size:30px; letter-spacing:-.03em; margin:8px 0 12px; }
+    p { font-size:17px; line-height:1.65; }
+    .stats { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:12px; margin-top:18px; }
+    .stat { padding:14px; background:#fff; border:1px solid var(--line); border-radius:18px; }
+    .stat span { display:block; color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.08em; font-weight:800; }
+    .stat strong { display:block; margin-top:4px; font-size:18px; }
+    .grid { display:grid; grid-template-columns: 1fr 1fr; gap:22px; margin-top:22px; }
+    .composition { border-left:8px solid var(--accent); }
+    .spark { font-size:20px; padding:18px; border-radius:22px; background:linear-gradient(135deg, hsl(var(--h), 92%, 94%), #fff); border:1px solid var(--line); }
+    .sources ul { margin:12px 0 0; padding-left:20px; }
+    a { color:var(--accent); font-weight:800; }
+    .button { display:inline-block; margin-top:10px; padding:11px 14px; border-radius:999px; color:white; text-decoration:none; background:linear-gradient(135deg,var(--accent),var(--accent2)); }
+    .ghost { background:#fff; border:1px solid var(--line); color:var(--accent); }
+    .footer { margin-top:28px; color:var(--muted); font-size:13px; }
+    @media (max-width: 820px) { .hero,.grid { grid-template-columns:1fr; } .image-card img { height:360px; } .stats { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="mast">
+      <div class="badge">☄️</div>
+      <div>
+        <div class="kicker">Daily Space Field Note · Tuesday, July 14, 2026</div>
+        <h1>Venus</h1>
+        <p class="subtitle">Earth’s evil twin with clouds of acid</p>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="image-card">
+        <img src="https://apod.nasa.gov/apod/image/2607/Torifune_JAXA_1400.jpg" alt="Double Lobed Asteroid Torifune">
+        <div class="caption"><strong>Double Lobed Asteroid Torifune</strong><br>Why is this asteroid a double? Earlier this month the Japanese robotic spacecraft Hayabusa2 shot past asteroid 98943 Torifune and captured pictures. Although previous observations from distant Earth indicated that Torifune was oblong, Hayabusa2 found that Torifune actually has two joined lobes. With a length of about four soccer fields, this space rock frequently comes near the Earth as it orbits the Sun, although it is not a threat. Besides the two lobes, Torifune shows many large boulders, but, surprisingly, no obvious craters, likely because its surface is a pile of rubble. Like asteroid Arrokoth, it appears that each lobe formed separatel</div>
+      </div>
+      <aside class="card">
+        <div class="eyebrow">Quick scan</div>
+        <h2>What is it made of?</h2>
+        <p>A rocky silicate planet with an iron core, wrapped in a crushing carbon-dioxide atmosphere and sulfuric-acid cloud layers.</p>
+        <div class="stats"><div class="stat"><span>Diameter</span><strong>12,104 km</strong></div>
+<div class="stat"><span>Surface pressure</span><strong>~92 Earth atmospheres</strong></div>
+<div class="stat"><span>Surface temperature</span><strong>~465°C</strong></div>
+<div class="stat"><span>Atmosphere</span><strong>~96.5% CO₂</strong></div></div>
+      </aside>
+    </section>
+
+    <section class="grid">
+      <article class="card composition">
+        <div class="eyebrow">Why it’s fascinating</div>
+        <h2>The hook</h2>
+        <div class="spark">Venus is not the closest planet to the Sun, but it is the hottest planet because its thick CO₂ atmosphere traps heat in a runaway greenhouse. Its surface pressure feels like being nearly a kilometer underwater on Earth.</div>
+      </article>
+      <article class="card">
+        <div class="eyebrow">Imagine this</div>
+        <h2>A tiny thought experiment</h2>
+        <p>Stand above Venus with a transparent science visor. The colors are not just scenery — they are chemistry: gases, minerals, sunlight, and temperature writing a planetary fingerprint in front of you.</p>
+      </article>
+    </section>
+
+    
+        <section class="apod card">
+          <div class="eyebrow">NASA APOD side quest</div>
+          <h2>Double Lobed Asteroid Torifune</h2>
+          <p>Why is this asteroid a double? Earlier this month the Japanese robotic spacecraft Hayabusa2 shot past asteroid 98943 Torifune and captured pictures. Although previous observations from distant Earth indicated that Torifune was oblong, Hayabusa2 found that Torifune actually has two joined lobes. With a length of about four soccer fields, this space rock frequently comes near the Earth as it orbits the Sun, although it is not a threat. Besides the two lobes, Torifune shows many large boulders, but, surprisingly, no obvious craters, likely because its surface is a pile of rubble. Like asteroid Arrokoth, it appears that each lobe formed separatel</p>
+          <a class="button ghost" href="https://apod.nasa.gov/apod/">Open NASA APOD</a>
+        </section>
+        
+
+    <section class="sources card">
+      <div class="eyebrow">Legit source trail</div>
+      <h2>Where this came from</h2>
+      <p>Primary references are NASA/JPL/ISRO or mission/science pages. Image search uses NASA’s public Image and Video Library; APOD uses NASA Astronomy Picture of the Day.</p>
+      <ul><li><a href="https://science.nasa.gov/venus/">NASA Solar System Exploration — Venus</a></li>
+<li><a href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/venusfact.html">NASA NSSDC Venus Fact Sheet</a></li>
+<li><a href="https://www.isro.gov.in/">ISRO Shukrayaan/Venus mission context</a></li>
+<li><a href="https://apod.nasa.gov/apod/">NASA Astronomy Picture of the Day</a></li></ul>
+    </section>
+    <div class="footer">Generated locally by Hermes Agent. External images remain credited to their source pages. Archive path: /opt/data/home/space-digest/</div>
+  </main>
+</body>
+</html>

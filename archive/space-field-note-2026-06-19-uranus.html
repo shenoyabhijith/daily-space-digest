@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Space Field Note — Uranus</title>
+  <style>
+    :root { --h:230; --ink:#101828; --muted:#667085; --paper:#fffaf0; --line:#eadfc9; --accent:hsl(var(--h), 82%, 42%); --accent2:hsl(calc(var(--h) + 42), 80%, 50%); }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; color:var(--ink); background: radial-gradient(circle at top left, hsl(var(--h), 90%, 92%), transparent 32rem), linear-gradient(135deg, #fffdf7, #f5f7fb 55%, #eef6ff); }
+    .wrap { max-width: 1120px; margin:0 auto; padding: 34px 22px 60px; }
+    .mast { display:flex; gap:18px; align-items:center; margin-bottom:24px; }
+    .badge { width:58px; height:58px; border-radius:19px; display:grid; place-items:center; color:white; font-size:30px; background:linear-gradient(135deg,var(--accent),var(--accent2)); box-shadow:0 18px 40px rgba(16,24,40,.18); }
+    .kicker { color:var(--accent); font-weight:800; letter-spacing:.16em; text-transform:uppercase; font-size:12px; }
+    h1 { font-size: clamp(42px, 8vw, 88px); line-height:.9; margin:8px 0 12px; letter-spacing:-.07em; }
+    .subtitle { font-size: clamp(20px, 3vw, 34px); color:#344054; margin:0; max-width:900px; }
+    .hero { margin-top:28px; display:grid; grid-template-columns: 1.25fr .75fr; gap:22px; align-items:stretch; }
+    .image-card, .card { border:1px solid rgba(16,24,40,.10); background:rgba(255,255,255,.78); backdrop-filter: blur(14px); border-radius:32px; overflow:hidden; box-shadow:0 20px 50px rgba(16,24,40,.10); }
+    .image-card img { display:block; width:100%; height:520px; object-fit:cover; background:#111827; }
+    .caption { padding:18px 22px; color:var(--muted); font-size:14px; }
+    .card { padding:26px; }
+    .eyebrow { color:var(--accent); font-weight:900; letter-spacing:.12em; text-transform:uppercase; font-size:12px; }
+    h2 { font-size:30px; letter-spacing:-.03em; margin:8px 0 12px; }
+    p { font-size:17px; line-height:1.65; }
+    .stats { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:12px; margin-top:18px; }
+    .stat { padding:14px; background:#fff; border:1px solid var(--line); border-radius:18px; }
+    .stat span { display:block; color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.08em; font-weight:800; }
+    .stat strong { display:block; margin-top:4px; font-size:18px; }
+    .grid { display:grid; grid-template-columns: 1fr 1fr; gap:22px; margin-top:22px; }
+    .composition { border-left:8px solid var(--accent); }
+    .spark { font-size:20px; padding:18px; border-radius:22px; background:linear-gradient(135deg, hsl(var(--h), 92%, 94%), #fff); border:1px solid var(--line); }
+    .sources ul { margin:12px 0 0; padding-left:20px; }
+    a { color:var(--accent); font-weight:800; }
+    .button { display:inline-block; margin-top:10px; padding:11px 14px; border-radius:999px; color:white; text-decoration:none; background:linear-gradient(135deg,var(--accent),var(--accent2)); }
+    .ghost { background:#fff; border:1px solid var(--line); color:var(--accent); }
+    .footer { margin-top:28px; color:var(--muted); font-size:13px; }
+    @media (max-width: 820px) { .hero,.grid { grid-template-columns:1fr; } .image-card img { height:360px; } .stats { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="mast">
+      <div class="badge">☄️</div>
+      <div>
+        <div class="kicker">Daily Space Field Note · Friday, June 19, 2026</div>
+        <h1>Uranus</h1>
+        <p class="subtitle">The sideways ice giant</p>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="image-card">
+        <img src="https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000100/GSFC_20171208_Archive_e000100~small.jpg" alt="Alien aurorae spotted on Uranus by Hubble">
+        <div class="caption"><strong>Alien aurorae spotted on Uranus by Hubble</strong><br>This is a composite image of Uranus by Voyager 2 and two different observations made by Hubble — one for the ring and one for the auroras. Ever since Voyager 2 beamed home spectacular images of the planets in the 1980s, planet-lovers have been hooked on auroras on other planets. Auroras are caused by streams of charged particles like electrons that come from various origins such as solar winds, the planetary ionosphere, and moon volcanism. They b</div>
+      </div>
+      <aside class="card">
+        <div class="eyebrow">Quick scan</div>
+        <h2>What is it made of?</h2>
+        <p>Hydrogen and helium atmosphere above an interior rich in water, ammonia, and methane ices. Methane absorbs red light, giving Uranus its blue-green color.</p>
+        <div class="stats"><div class="stat"><span>Diameter</span><strong>50,724 km</strong></div>
+<div class="stat"><span>Axial tilt</span><strong>~98°</strong></div>
+<div class="stat"><span>Year</span><strong>84 Earth years</strong></div>
+<div class="stat"><span>Color source</span><strong>methane</strong></div></div>
+      </aside>
+    </section>
+
+    <section class="grid">
+      <article class="card composition">
+        <div class="eyebrow">Why it’s fascinating</div>
+        <h2>The hook</h2>
+        <div class="spark">Uranus rotates on its side, as if a planet-sized collision knocked it over. Its seasons are extreme: each pole can face decades of sunlight followed by decades of darkness.</div>
+      </article>
+      <article class="card">
+        <div class="eyebrow">Imagine this</div>
+        <h2>A tiny thought experiment</h2>
+        <p>Stand above Uranus with a transparent science visor. The colors are not just scenery — they are chemistry: gases, minerals, sunlight, and temperature writing a planetary fingerprint in front of you.</p>
+      </article>
+    </section>
+
+    
+        <section class="apod card">
+          <div class="eyebrow">NASA APOD side quest</div>
+          <h2>Starry Night II</h2>
+          <p>Does this scene look familiar? It is a modern recreation of the famous painting Starry Night by Vincent van Gogh. Both the image and the painting depict a tall tree on the left, a crescent moon on the upper right, the planet Venus just to the right of the tree, a foreground horizon rising from left to right, and clouds above the horizon. Differences include that the photograph was taken in mid-April earlier this year in Cascavel, Brazil, while the painting was composed in Saint-Rémy-de-Provence, France, in 1889. The original Starry Night is considered by many to be one of the three most famous paintings in the world today and a statement abou</p>
+          <a class="button ghost" href="https://apod.nasa.gov/apod/">Open NASA APOD</a>
+        </section>
+        
+
+    <section class="sources card">
+      <div class="eyebrow">Legit source trail</div>
+      <h2>Where this came from</h2>
+      <p>Primary references are NASA/JPL/ISRO or mission/science pages. Image search uses NASA’s public Image and Video Library; APOD uses NASA Astronomy Picture of the Day.</p>
+      <ul><li><a href="https://science.nasa.gov/uranus/">NASA Solar System Exploration — Uranus</a></li>
+<li><a href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/uranusfact.html">NASA NSSDC Uranus Fact Sheet</a></li>
+<li><a href="https://images.nasa.gov/search-results?q=Uranus%20Voyager%202%20NASA%20ice%20giant%20rings">NASA Image and Video Library</a></li>
+<li><a href="https://apod.nasa.gov/apod/">NASA Astronomy Picture of the Day</a></li></ul>
+    </section>
+    <div class="footer">Generated locally by Hermes Agent. External images remain credited to their source pages. Archive path: /opt/data/home/space-digest/</div>
+  </main>
+</body>
+</html>
