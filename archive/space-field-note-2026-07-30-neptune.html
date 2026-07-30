@@ -1,43 +1,171 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Space Field Note — Neptune</title>
-<style>:root{--h:217;--ink:#101828;--muted:#667085;--paper:#fffaf0;--line:#eadfc9;--accent:hsl(var(--h),82%,42%);--accent2:hsl(calc(var(--h)+42),80%,50%)}
-*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,sans-serif;color:var(--ink);background:radial-gradient(circle at top left,hsl(var(--h),90%,92%),transparent 32rem),linear-gradient(135deg,#fffdf7,#f5f7fb 55%,#eef6ff)}
-.wrap{max-width:1120px;margin:0 auto;padding:34px 22px 60px}.mast{display:flex;gap:18px;align-items:center;margin-bottom:24px}
-.badge{width:58px;height:58px;border-radius:19px;display:grid;place-items:center;color:#fff;font-size:30px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 18px 40px rgba(16,24,40,.18)}
-.kicker{color:var(--accent);font-weight:800;letter-spacing:.16em;text-transform:uppercase;font-size:12px}
-h1{font-size:clamp(42px,8vw,88px);line-height:.9;margin:8px 0 12px;letter-spacing:-.07em}
-.subtitle{font-size:clamp(20px,3vw,34px);color:#344054;margin:0}
-.hero{margin-top:28px;display:grid;grid-template-columns:1.25fr .75fr;gap:22px;align-items:stretch}
-.image-card,.card{border:1px solid rgba(16,24,40,.10);background:rgba(255,255,255,.78);backdrop-filter:blur(14px);border-radius:32px;overflow:hidden;box-shadow:0 20px 50px rgba(16,24,40,.10)}
-.image-card img{display:block;width:100%;height:520px;object-fit:cover;background:#111827}
-.caption{padding:18px 22px;color:var(--muted);font-size:14px}.card{padding:26px}
-.eyebrow{color:var(--accent);font-weight:900;letter-spacing:.12em;text-transform:uppercase;font-size:12px}
-h2{font-size:30px;letter-spacing:-.03em;margin:8px 0 12px}p{font-size:17px;line-height:1.65}
-.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}
-.stat{padding:14px;background:#fff;border:1px solid var(--line);border-radius:18px}
-.stat span{display:block;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.08em;font-weight:800}
-.stat strong{display:block;margin-top:4px;font-size:18px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px}
-.composition{border-left:8px solid var(--accent)}
-.spark{font-size:20px;padding:18px;border-radius:22px;background:linear-gradient(135deg,hsl(var(--h),92%,94%),#fff);border:1px solid var(--line)}
-.sources ul{margin:12px 0 0;padding-left:20px}a{color:var(--accent);font-weight:800}
-.footer{margin-top:28px;color:var(--muted);font-size:13px}
-@media(max-width:820px){.hero,.grid{grid-template-columns:1fr}.image-card img{height:360px}.stats{grid-template-columns:1fr}}
-</style></head><body><main class="wrap">
-<header class="mast"><div class="badge">☄️</div><div><div class="kicker">Daily Space Field Note</div><h1>Neptune</h1><p class="subtitle">The blue world with supersonic winds</p></div></header>
-<section class="hero"><div class="image-card"><img src="https://images-assets.nasa.gov/image/PIA00049/PIA00049~small.jpg" alt="Neptune"><div class="caption"><strong>Neptune - Great Dark Spot, Scooter, Dark Spot 2</strong><br>This photograph of Neptune was reconstructed from two images taken by NASA Voyager 2. At the north top is the Great Dark Spot. http://photojournal.jpl.nasa.gov/catalog/PIA00049</div></div>
-<aside class="card"><div class="eyebrow">Quick scan</div><h2>What is it made of?</h2><p>Hydrogen, helium, methane atmosphere over an ice-rich mantle of water, ammonia, and methane around a rocky core.</p><div class="stats"><div class="stat"><span>Diameter</span><strong>49,244 km</strong></div>
-<div class="stat"><span>Year</span><strong>165 Earth years</strong></div>
-<div class="stat"><span>Winds</span><strong>up to ~2,000 km/h</strong></div>
-<div class="stat"><span>Color source</span><strong>methane + haze</strong></div></div></aside></section>
-<section class="grid"><article class="card composition"><div class="eyebrow">Why it's fascinating</div><h2>The hook</h2><div class="spark">Neptune receives very little sunlight, yet it has some of the fastest winds in the Solar System. Something inside this cold blue planet is still powering wild weather.</div></article>
-<article class="card"><div class="eyebrow">Imagine this</div><h2>A tiny thought experiment</h2><p>Stand above Neptune with a transparent science visor. The colors are not just scenery — they are chemistry.</p></article></section>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Neptune — Daily Space Field Note</title>
+  <link rel="canonical" href="https://shenoyabhijith.github.io/daily-space-digest/">
+  <style>
+    :root {
+      --h:217;
+      --ink:#101828;
+      --muted:#5f6b7e;
+      --line:#e2e4e9;
+      --paper:#fcfbf9;
+      --accent:hsl(var(--h), 78%, 40%);
+      --accent2:hsl(calc(var(--h) + 50), 75%, 48%);
+      --accent-light:hsl(var(--h), 70%, 92%);
+      --font:'Inter','Segoe UI','system-ui',-apple-system,sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--paper);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:1000px;margin:0 auto;padding:0 20px 48px}
 
-<section class="apod card"><div class="eyebrow">NASA APOD</div><h2>Red Sun through Wildfire Smoke</h2><p>This could be the view from an exoplanet orbiting around a red dwarf star, but it is our own Sun. This image was taken on July 22, 2026, in the Okanagan region in the Canadian province of British Columbia. Wildfire smoke from the Pacific Northwest acted as a solar filter, allowing the photographer to take this photo of the Sun directly. Several sunspots are also visible in this eerie image; just below and right of the center is AR 4493, a fast evolving, giant active solar region and sunspot group. The smoke is made of tiny particles that help block and scatter light with bluer colors, so the light we see coming from the Sun is dimmer and redd</p><a class="button ghost" href="https://apod.nasa.gov/apod/">Open NASA APOD</a></section>
+    /* Masthead */
+    .mast{
+      padding:48px 0 28px;border-bottom:1px solid var(--line);margin-bottom:32px;
+      display:flex;flex-wrap:wrap;gap:12px 24px;align-items:flex-end;justify-content:space-between
+    }
+    .mast-left h1{font-size:clamp(36px,6vw,60px);letter-spacing:-.05em;line-height:1.05;margin:0 0 4px}
+    .mast-left .subtitle{font-size:clamp(18px,2.5vw,28px);color:var(--muted);font-weight:400}
+    .mast-left .kicker{color:var(--accent);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px}
+    .mast-right{text-align:right;color:var(--muted);font-size:14px;line-height:1.5;flex-shrink:0}
 
-<section class="sources card"><div class="eyebrow">Source trail</div><h2>References</h2><ul><li><a href="https://science.nasa.gov/neptune/">NASA Solar System — Neptune</a></li>
-<li><a href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/neptunefact.html">NASA NSSDC Neptune Fact Sheet</a></li>
-<li><a href="https://images.nasa.gov/search-results?q=Neptune%20Voyager%202%20NASA%20dark%20spot">NASA Images</a></li>
-<li><a href="https://apod.nasa.gov/apod/">NASA APOD</a></li></ul></section>
-<div class="footer">Generated by Astronomy Daily Digest. <a href="https://shenoyabhijith.github.io/daily-space-digest/">View all</a></div>
-</main></body></html>
+    /* Lead */
+    .lead{
+      font-size:20px;line-height:1.7;color:#334155;margin-bottom:36px;
+      padding:20px 24px;background:var(--accent-light);border-radius:16px;
+      border-left:4px solid var(--accent);
+    }
+
+    /* Hero image */
+    .hero-wrap{margin-bottom:36px;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:#111}
+    .hero-wrap img{display:block;width:100%;height:auto;max-height:560px;object-fit:cover}
+    .hero-cap{padding:14px 20px;font-size:14px;color:var(--muted);background:#fff}
+    .hero-cap strong{color:var(--ink)}
+
+    /* Content layout: main + sidebar */
+    .content-layout{display:grid;grid-template-columns:1fr 300px;gap:32px;align-items:start}
+    @media(max-width:820px){.content-layout{grid-template-columns:1fr}}
+
+    /* Narrative sections */
+    .section{margin-bottom:28px}
+    .section h2{font-size:21px;color:var(--accent);margin-bottom:8px;font-weight:700;letter-spacing:-.02em}
+    .section .body{color:#334155;font-size:17px;line-height:1.8}
+
+    /* Stats card (sidebar) */
+    .stats-card{
+      background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;
+      position:sticky;top:16px
+    }
+    .stats-card h3{font-size:15px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:16px;font-weight:700}
+    .stats-grid{display:grid;gap:10px}
+    .stat{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px solid #f0f1f3}
+    .stat:last-child{border-bottom:none}
+    .stat-label{font-size:13px;color:var(--muted)}
+    .stat-value{font-size:15px;font-weight:600;text-align:right;white-space:nowrap}
+
+    /* APOD callout */
+    .apod-card{
+      margin:32px 0;padding:20px 24px;background:#fff;border:1px solid var(--line);
+      border-radius:16px
+    }
+    .apod-eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700}
+    .apod-card h3{font-size:18px;margin:6px 0 8px;color:var(--ink)}
+    .apod-card p{font-size:15px;color:#334155;line-height:1.6}
+    .btn-ghost{display:inline-block;margin-top:8px;padding:8px 16px;border:1px solid var(--accent);color:var(--accent);border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;transition:.15s}
+    .btn-ghost:hover{background:var(--accent);color:#fff}
+
+    /* Sources */
+    .sources{
+      margin-top:32px;padding:24px;background:#fff;border:1px solid var(--line);border-radius:16px
+    }
+    .sources h3{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:12px;font-weight:700}
+    .sources ul{list-style:none;padding:0}
+    .sources li{margin-bottom:6px}
+    .sources a{color:var(--accent);text-decoration:none;font-size:15px;font-weight:500}
+    .sources a:hover{text-decoration:underline}
+
+    /* Footer */
+    .footer{
+      margin-top:36px;padding-top:20px;border-top:1px solid var(--line);
+      display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+      color:var(--muted);font-size:13px
+    }
+    .footer a{color:var(--accent);text-decoration:none}
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="mast">
+    <div class="mast-left">
+      <div class="kicker">☄ Daily Space Field Note</div>
+      <h1>Neptune</h1>
+      <div class="subtitle">The blue world with supersonic winds</div>
+    </div>
+    <div class="mast-right">
+      Thursday, July 30, 2026<br>
+      ~5 min read
+    </div>
+  </header>
+
+  <p class="lead">Neptune is the outermost planet, the most distant, and the coldest. Yet at the edge of the Solar System, where sunlight is 900 times dimmer than on Earth, Neptune hides an unsettling secret: its winds scream at supersonic speeds, making it the windiest place in the entire Solar System. It is the last planet discovered by mathematics, the first planet glimpsed by calculation before it was ever seen through a telescope, and the only planet visited a single time by a single spacecraft.</p>
+
+  <div class="hero-wrap"><img src="https://apod.nasa.gov/apod/image/2607/red_sun.jpg" alt="Red Sun through Wildfire Smoke" loading="lazy"><div class="hero-cap"><strong>Red Sun through Wildfire Smoke</strong> — This could be the view from an exoplanet orbiting around a red dwarf star, but it is our own Sun. This image was taken on July 22, 2026, in the Okanagan region in the Canadian province of British Columbia. Wildfire smoke from the Pacific Northwest acted as a solar filter, allowing the photographer t</div></div>
+
+  <div class="content-layout">
+    <main>
+      <article class="section">
+  <h2>◆ Discovery &amp; Naming — A Triumph of Mathematics</h2>
+  <div class="body">Unlike the other planets, Neptune was not discovered by someone scanning the sky. It was predicted. In the 1820s, astronomers noticed that Uranus&#x27;s orbit didn&#x27;t quite match Newton&#x27;s predictions — it was being pulled off course by an unseen gravitational influence. Two mathematicians independently calculated where the missing planet must be: Urbain Le Verrier in France and John Couch Adams in England. On September 23, 1846, Johann Galle at the Berlin Observatory pointed his telescope to where Le Verrier predicted and found Neptune within one degree of that position. It was the most stunning confirmation of Newtonian gravity in the 19th century. The planet was named Neptune, after the Roman god of the sea, in keeping with the aquatic theme (the blue color made it appropriate). Its largest moon, Triton, was discovered just 17 days later.</div>
+</article><article class="section">
+  <h2>◆ Physical Profile — The Other Ice Giant</h2>
+  <div class="body">Neptune is almost Uranus&#x27;s twin in size (49,244 km vs 50,724 km), but it is noticeably more massive (17 Earth masses vs 14.5). Its deep blue color — much richer than Uranus&#x27;s pale cyan — is one of its most striking features, caused not just by methane absorption but by an unknown atmospheric component that gives the blue a vivid, dramatic intensity. Neptune&#x27;s internal structure is similar to Uranus&#x27;s: a hydrogen-helium atmosphere overlying a mantle of water, methane, and ammonia ices, with a rocky core of about 1.2 Earth masses. But unlike Uranus, Neptune radiates 2.6 times more heat than it receives from the Sun. This internal heat source is what drives Neptune&#x27;s ferocious weather — the planet&#x27;s atmosphere churns with storms, bands, and the fastest winds ever measured in the Solar System.</div>
+</article><article class="section">
+  <h2>◆ The Supersonic Atmosphere</h2>
+  <div class="body">Neptune&#x27;s winds are the fastest recorded on any planet in the Solar System, reaching 2,000 km/h — nearly double the speed of sound on Earth. To put that in perspective: a 2,000 km/h wind would circle Earth in 20 hours. These winds power massive storm systems. When Voyager 2 flew past in 1989, it spotted the Great Dark Spot — an enormous anticyclonic storm the size of Earth, resembling Jupiter&#x27;s Great Red Spot but in vivid blue. By the time the Hubble Space Telescope looked at Neptune just a few years later, the Great Dark Spot had vanished entirely, and new storms had appeared in other locations, revealing that Neptune&#x27;s atmosphere is far more dynamic than previously imagined. In 2018, Hubble spotted a new dark storm system forming in the northern hemisphere, with smaller companion clouds — nicknamed &quot;dark spots&quot; — that appear sporadically and evolve rapidly. Neptune&#x27;s atmosphere also hosts high-altitude white methane-ice clouds that cast shadows on the main cloud deck below, allowing scientists to measure cloud heights.</div>
+</article><article class="section">
+  <h2>◆ Triton — A Captured World from the Kuiper Belt</h2>
+  <div class="body">Triton is Neptune&#x27;s largest moon and one of the most bizarre objects in the Solar System. It orbits Neptune in a retrograde direction (opposite to Neptune&#x27;s rotation), which is a dead giveaway that it did not form around Neptune — it was captured from the Kuiper Belt. Triton is about 2,700 km across, slightly smaller than our Moon, and has a tenuous nitrogen atmosphere. Its surface temperature is -235°C — making it the coldest known surface in the Solar System. Yet despite the cold, Triton is geologically active: Voyager 2 imaged geysers of nitrogen gas erupting from the surface and being carried 8 km downwind by the thin atmosphere. The surface is a frozen landscape of nitrogen and methane ice, with a cantaloupe-like terrain of wrinkled, textured plains that no one fully explains. Triton is widely considered a Kuiper Belt object captured by Neptune&#x27;s gravity, making it a scientific Rosetta Stone for understanding both the ice giant system and the primordial bodies beyond Neptune.</div>
+</article><article class="section">
+  <h2>◆ Exploration History</h2>
+  <div class="body">Neptune has been visited by exactly one spacecraft: Voyager 2, which arrived on August 25, 1989, for a single flyby that transformed our understanding of the outer Solar System&#x27;s frontier. The flyby revealed six new moons, the Great Dark Spot, the supersonic winds, and the nitrogen geysers on Triton. And then there has been nothing for 37 years and counting. Despite being the most distant planet, Neptune is not particularly hard to reach — it is simply far away, requiring a 12-year journey from Earth even on an optimal trajectory. No dedicated mission to Neptune has ever been approved. But the 2023-2032 Planetary Science Decadal Survey identified a Uranus Orbiter and Probe as the top priority, and a Neptune mission is the logical follow-up. A proposed Trident mission would focus on Triton&#x27;s active plumes, and the planned Uranus mission could open the door for a Neptune flagship in the 2040s.</div>
+</article><article class="section">
+  <h2>◆ Why It Captivates Us</h2>
+  <div class="body">Neptune is the edge of the known — a world where the light takes four hours to reach, where winds blow at speeds that would strip the skin off any spacecraft, and where a frozen moon from the Kuiper Belt orbits backwards, kept warm enough by tidal forces to breathe thin geysers in the perpetual twilight. It was found by mathematics, visited once, and then — for an entire human lifetime — left alone. Neptune represents everything we still don&#x27;t know about our own Solar System. It is a reminder that the frontiers are not all in the past.</div>
+</article>
+      
+<section class="apod-card">
+  <span class="apod-eyebrow">✦ NASA Astronomy Picture of the Day</span>
+  <h3>Red Sun through Wildfire Smoke</h3>
+  <p>This could be the view from an exoplanet orbiting around a red dwarf star, but it is our own Sun. This image was taken on July 22, 2026, in the Okanagan region in the Canadian province of British Columbia. Wildfire smoke from the Pacific Northwest acted as a solar filter, allowing the photographer to take this photo of the Sun directly. Several sunspots are also visible in this eerie image; just b</p>
+  <a class="btn-ghost" href="https://apod.nasa.gov/apod/" target="_blank">View full image →</a>
+</section>
+    </main>
+    <aside>
+      <aside class="stats-card">
+  <h3>Quick Facts</h3>
+  <div class="stats-grid"><div class="stat"><span class="stat-label">Diameter</span><span class="stat-value">49,244 km</span></div><div class="stat"><span class="stat-label">Mass</span><span class="stat-value">17 Earths</span></div><div class="stat"><span class="stat-label">Winds</span><span class="stat-value">up to 2,000 km/h</span></div><div class="stat"><span class="stat-label">Year</span><span class="stat-value">165 Earth years</span></div><div class="stat"><span class="stat-label">Day</span><span class="stat-value">16.1 hours</span></div><div class="stat"><span class="stat-label">Known moons</span><span class="stat-value">16</span></div><div class="stat"><span class="stat-label">Visited by</span><span class="stat-value">Voyager 2 (1989)</span></div><div class="stat"><span class="stat-label">Internal heat</span><span class="stat-value">2.6x received sunlight</span></div></div>
+</aside>
+    </aside>
+  </div>
+
+  <section class="sources">
+    <h3>Sources &amp; Further Reading</h3>
+    <ul><li><a href="https://science.nasa.gov/neptune/">NASA Solar System — Neptune</a></li>
+<li><a href="https://science.nasa.gov/mission/voyager/">NASA Voyager 2</a></li>
+<li><a href="https://science.nasa.gov/neptune/moons/triton/">NASA Triton Overview</a></li>
+<li><a href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/neptunefact.html">JPL Neptune Fact Sheet</a></li>
+<li><a href="https://apod.nasa.gov/apod/">NASA APOD</a></li>
+</ul>
+  </section>
+
+  <footer class="footer">
+    <span>Generated by <a href="https://shenoyabhijith.github.io/daily-space-digest/">Daily Space Digest</a></span>
+    <span>Also see <a href="https://shenoyabhijith.github.io/indian-mythology-digest/">Indian Mythology Digest</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
