@@ -9,15 +9,15 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2064%2064%27%3E%3Crect%20width%3D%2764%27%20height%3D%2764%27%20rx%3D%2714%27%20fill%3D%27%2317181a%27/%3E%3Ccircle%20cx%3D%2732%27%20cy%3D%2732%27%20r%3D%2711%27%20fill%3D%27%233d9aff%27/%3E%3Cellipse%20cx%3D%2732%27%20cy%3D%2732%27%20rx%3D%2721%27%20ry%3D%276.5%27%20fill%3D%27none%27%20stroke%3D%27%23f2f3f4%27%20stroke-width%3D%273%27%20transform%3D%27rotate%28-18%2032%2032%29%27/%3E%3C/svg%3E">
 <style>
 :root{
-  --page:#17181a;--surface:#232427;--field:#2b2c2f;--inset:#1f2022;--hover:#2a2b2e;
-  --line:#2e3033;--line-strong:#3a3c40;
+  --page:#141518;--surface:#26272c;--field:#2f3035;--inset:#1e1f23;--hover:#2e2f34;
+  --line:#33353a;--line-strong:#43454c;
   --ink:#f2f3f4;--ink-2:#a5a8ad;--ink-3:#6c6f75;
   --accent:#3d9aff;--accent-tint:rgba(61,154,255,.13);--accent-ink:#3d9aff;
   --green:#3dbb72;--orange:#f68f3c;--red:#ee5c61;
-  --shadow-card:0 0 0 1px #2e3033,0 1px 2px rgba(0,0,0,.03),0 2px 6px rgba(0,0,0,.03);
-  --shadow-hairline:0 0 0 1px #2e3033;
-  --shadow-btn:0 0 0 1px #3a3c40,0 1px 2px rgba(0,0,0,.3);
-  --shadow-raised:0 0 0 1px #2e3033,0 2px 10px rgba(0,0,0,.24);
+  --shadow-card:0 0 0 1px #33353a,0 1px 2px rgba(0,0,0,.25),0 4px 14px rgba(0,0,0,.25);
+  --shadow-hairline:0 0 0 1px #33353a;
+  --shadow-btn:0 0 0 1px #43454c,0 1px 2px rgba(0,0,0,.35);
+  --shadow-raised:0 0 0 1px #33353a,0 6px 24px rgba(0,0,0,.4);
   --radius:12px;
 }
 html.light{
@@ -30,9 +30,9 @@ html.light{
   --shadow-btn:0 0 0 1px #d6d6dc,0 1px 2px rgba(0,0,0,.12);
   --shadow-raised:0 0 0 1px #e3e3e7,0 2px 10px rgba(0,0,0,.08);
 }
-@font-face{font-family:'Inter Variable';font-style:normal;font-display:swap;font-weight:100 900;src:url(../assets/fonts/inter-latin.woff2)format('woff2-variations');}
-@font-face{font-family:'Inter Variable';font-style:normal;font-display:swap;font-weight:100 900;src:url(../assets/fonts/inter-latin-ext.woff2)format('woff2-variations');}
-@font-face{font-family:'JetBrains Mono Variable';font-style:normal;font-display:swap;font-weight:100 800;src:url(../assets/fonts/jb-mono-latin.woff2)format('woff2-variations');}
+@font-face{font-family:'Inter Variable';font-style:normal;font-display:swap;font-weight:100 900;src:url(../assets/fonts/inter-latin.woff2)format('woff2');}
+@font-face{font-family:'Inter Variable';font-style:normal;font-display:swap;font-weight:100 900;src:url(../assets/fonts/inter-latin-ext.woff2)format('woff2');}
+@font-face{font-family:'JetBrains Mono Variable';font-style:normal;font-display:swap;font-weight:100 800;src:url(../assets/fonts/jb-mono-latin.woff2)format('woff2');}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--page);color:var(--ink);font-family:'Inter Variable',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;font-size:17px;line-height:1.75;-webkit-font-smoothing:antialiased;transition:background-color .2s,color .2s}
@@ -64,8 +64,9 @@ body{background:var(--page);color:var(--ink);font-family:'Inter Variable',system
 .content-layout{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:28px;align-items:start}
 @media(max-width:840px){.content-layout{grid-template-columns:1fr}}
 /* Cards */
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-card)}
-.section{padding:24px 26px;margin-bottom:20px}
+.card{background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--radius);box-shadow:var(--shadow-card)}
+.section{padding:24px 26px;margin-bottom:20px;border-left:3px solid transparent;transition:border-color .15s}
+.section:hover{border-left-color:var(--accent)}
 .eyebrow{font-family:'JetBrains Mono Variable',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:10px}
 .section h2{font-size:21px;letter-spacing:-.02em;margin-bottom:10px;color:var(--ink)}
 .section .body{font-size:16.5px;line-height:1.8;color:var(--ink-2);white-space:pre-line}
@@ -137,7 +138,7 @@ function setTheme(m){
   </header>
 
   <p class="lead">Even through a small backyard telescope, Saturn is unmistakable — a pale gold disk encircled by rings so perfect they look like a cosmic illustration. But Saturn is far more than the most photogenic planet in the Solar System. It is a world of extreme contrasts: a gas giant less dense than water, with a moon that has a thick atmosphere and methane seas, and another moon that is actively spraying ocean water into space from its south pole.</p>
-  <figure class="hero"><img src="https://apod.nasa.gov/apod/image/2608/saturn_spokes.gif" alt="Spokes on Saturn&#x27;s B Ring" loading="lazy"><figcaption class="hero-cap"><strong>Spokes on Saturn&#x27;s B Ring</strong> — Don’t get spooked by Saturn’s ghostly spokes! Today we feature a nearly two-hour timelapse of Saturn and its rings looping forwards and backwards. A day on Saturn is only 10 hours long, so two hours of observation covers quite a bit of its rotation. If you look closely, a ghoulish shadow appears and</figcaption></figure>
+  <figure class="hero"><img src="https://apod.nasa.gov/apod/image/2608/saturn_spokes.gif" alt="Spokes on Saturn&amp;amp;#x27;s B Ring" loading="lazy"><figcaption class="hero-cap"><strong>Spokes on Saturn&amp;amp;#x27;s B Ring</strong> — Spokes on Saturn&amp;amp;#x27;s B Ring</figcaption></figure>
 
   <div class="content-layout">
     <main>
@@ -163,12 +164,6 @@ function setTheme(m){
   <div class="body">Saturn is beauty and science in one package. The rings are the most visually stunning feature in the Solar System, and their apparent youthfulness raises profound questions about how planetary systems evolve. The moons are arguably even more compelling than the planet itself: Titan has a complete &quot;Earth-like&quot; geology with different chemistry, and Enceladus has liquid water and organic chemistry right now — a potential habitat for life accessible without needing to drill through kilometers of ice. Saturn&#x27;s system is a laboratory for understanding planets, moons, rings, and the delicate dance between them. And the rings won&#x27;t be here forever, which makes every look through a telescope a view of a fleeting masterpiece.</div>
 </article>
       
-<section class="apod">
-  <p class="eyebrow">✦ NASA Astronomy Picture of the Day</p>
-  <h3>Spokes on Saturn&#x27;s B Ring</h3>
-  <p>Don’t get spooked by Saturn’s ghostly spokes! Today we feature a nearly two-hour timelapse of Saturn and its rings looping forwards and backwards. A day on Saturn is only 10 hours long, so two hours of observation covers quite a bit of its rotation. If you look closely, a ghoulish shadow appears and disappears as Saturn’s B ring rotates. Decades of observation with Voyager 2, Cassini, and Hubble s</p>
-  <a class="pill pill-primary" href="https://apod.nasa.gov/apod/" target="_blank" rel="noopener">View full image →</a>
-</section>
     </main>
     <aside>
       <aside class="card stats-card">
@@ -184,7 +179,7 @@ function setTheme(m){
 <li><a href="https://science.nasa.gov/mission/cassini/">NASA Cassini Mission</a></li>
 <li><a href="https://www.esa.int/Science_Exploration/Space_Science/Cassini-Huygens">ESA Huygens Probe</a></li>
 <li><a href="https://science.nasa.gov/titan/">NASA Titan Overview</a></li>
-<li><a href="https://apod.nasa.gov/apod/">NASA APOD</a></li>
+<li><a href="https://images.nasa.gov/">NASA Image and Video Library</a></li>
 </ul>
   </section>
 

@@ -8,15 +8,15 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2064%2064%27%3E%3Crect%20width%3D%2764%27%20height%3D%2764%27%20rx%3D%2714%27%20fill%3D%27%2317181a%27/%3E%3Ccircle%20cx%3D%2732%27%20cy%3D%2732%27%20r%3D%2711%27%20fill%3D%27%233d9aff%27/%3E%3Cellipse%20cx%3D%2732%27%20cy%3D%2732%27%20rx%3D%2721%27%20ry%3D%276.5%27%20fill%3D%27none%27%20stroke%3D%27%23f2f3f4%27%20stroke-width%3D%273%27%20transform%3D%27rotate%28-18%2032%2032%29%27/%3E%3C/svg%3E">
 <style>
 :root{
-  --page:#17181a;--surface:#232427;--field:#2b2c2f;--inset:#1f2022;--hover:#2a2b2e;
-  --line:#2e3033;--line-strong:#3a3c40;
+  --page:#141518;--surface:#26272c;--field:#2f3035;--inset:#1e1f23;--hover:#2e2f34;
+  --line:#33353a;--line-strong:#43454c;
   --ink:#f2f3f4;--ink-2:#a5a8ad;--ink-3:#6c6f75;
   --accent:#3d9aff;--accent-tint:rgba(61,154,255,.13);--accent-ink:#3d9aff;
   --green:#3dbb72;--orange:#f68f3c;--red:#ee5c61;
-  --shadow-card:0 0 0 1px #2e3033,0 1px 2px rgba(0,0,0,.03),0 2px 6px rgba(0,0,0,.03);
-  --shadow-hairline:0 0 0 1px #2e3033;
-  --shadow-btn:0 0 0 1px #3a3c40,0 1px 2px rgba(0,0,0,.3);
-  --shadow-raised:0 0 0 1px #2e3033,0 2px 10px rgba(0,0,0,.24);
+  --shadow-card:0 0 0 1px #33353a,0 1px 2px rgba(0,0,0,.25),0 4px 14px rgba(0,0,0,.25);
+  --shadow-hairline:0 0 0 1px #33353a;
+  --shadow-btn:0 0 0 1px #43454c,0 1px 2px rgba(0,0,0,.35);
+  --shadow-raised:0 0 0 1px #33353a,0 6px 24px rgba(0,0,0,.4);
   --radius:12px;
 }
 html.light{
@@ -29,9 +29,9 @@ html.light{
   --shadow-btn:0 0 0 1px #d6d6dc,0 1px 2px rgba(0,0,0,.12);
   --shadow-raised:0 0 0 1px #e3e3e7,0 2px 10px rgba(0,0,0,.08);
 }
-@font-face{font-family:'Inter Variable';font-style:normal;font-display:swap;font-weight:100 900;src:url(assets/fonts/inter-latin.woff2)format('woff2-variations');}
-@font-face{font-family:'Inter Variable';font-style:normal;font-display:swap;font-weight:100 900;src:url(assets/fonts/inter-latin-ext.woff2)format('woff2-variations');}
-@font-face{font-family:'JetBrains Mono Variable';font-style:normal;font-display:swap;font-weight:100 800;src:url(assets/fonts/jb-mono-latin.woff2)format('woff2-variations');}
+@font-face{font-family:'Inter Variable';font-style:normal;font-display:swap;font-weight:100 900;src:url(assets/fonts/inter-latin.woff2)format('woff2');}
+@font-face{font-family:'Inter Variable';font-style:normal;font-display:swap;font-weight:100 900;src:url(assets/fonts/inter-latin-ext.woff2)format('woff2');}
+@font-face{font-family:'JetBrains Mono Variable';font-style:normal;font-display:swap;font-weight:100 800;src:url(assets/fonts/jb-mono-latin.woff2)format('woff2');}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--page);color:var(--ink);font-family:'Inter Variable',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;font-size:17px;line-height:1.75;-webkit-font-smoothing:antialiased;transition:background-color .2s,color .2s}
@@ -63,8 +63,9 @@ body{background:var(--page);color:var(--ink);font-family:'Inter Variable',system
 .content-layout{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:28px;align-items:start}
 @media(max-width:840px){.content-layout{grid-template-columns:1fr}}
 /* Cards */
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-card)}
-.section{padding:24px 26px;margin-bottom:20px}
+.card{background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--radius);box-shadow:var(--shadow-card)}
+.section{padding:24px 26px;margin-bottom:20px;border-left:3px solid transparent;transition:border-color .15s}
+.section:hover{border-left-color:var(--accent)}
 .eyebrow{font-family:'JetBrains Mono Variable',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:10px}
 .section h2{font-size:21px;letter-spacing:-.02em;margin-bottom:10px;color:var(--ink)}
 .section .body{font-size:16.5px;line-height:1.8;color:var(--ink-2);white-space:pre-line}
@@ -146,54 +147,54 @@ function setTheme(m){
 <a href="archive/space-field-note-2026-08-01-mercury.html" class="arc-card"><h3>Mercury</h3><p>The iron heart of the Solar System</p></a>
 <a href="archive/space-field-note-2026-07-31-moon.html" class="arc-card"><h3>Moon</h3><p>Earth&amp;#x27;s ancient companion and next frontier</p></a>
 <a href="archive/space-field-note-2026-07-30-neptune.html" class="arc-card"><h3>Neptune</h3><p>The blue world with supersonic winds</p></a>
-<a href="archive/space-field-note-2026-07-29-uranus.html" class="arc-card"><h3>Uranus</h3><p></p></a>
-<a href="archive/space-field-note-2026-07-28-saturn.html" class="arc-card"><h3>Saturn</h3><p></p></a>
-<a href="archive/space-field-note-2026-07-27-jupiter.html" class="arc-card"><h3>Jupiter</h3><p></p></a>
-<a href="archive/space-field-note-2026-07-26-mars.html" class="arc-card"><h3>Mars</h3><p></p></a>
-<a href="archive/space-field-note-2026-07-25-venus.html" class="arc-card"><h3>Venus</h3><p></p></a>
-<a href="archive/space-field-note-2026-07-24-mercury.html" class="arc-card"><h3>Mercury</h3><p></p></a>
-<a href="archive/space-field-note-2026-07-23-comet-67p-churyumov-gerasimenko.html" class="arc-card"><h3>Comet 67P/Churyumov–Gerasimenko</h3><p></p></a>
-<a href="archive/space-field-note-2026-07-22-asteroid-psyche.html" class="arc-card"><h3>Asteroid Psyche</h3><p></p></a>
-<a href="archive/space-field-note-2026-07-21-asteroid-bennu.html" class="arc-card"><h3>Asteroid Bennu</h3><p></p></a>
-<a href="archive/space-field-note-2026-07-20-moon.html" class="arc-card"><h3>Moon</h3><p></p></a>
-<a href="archive/space-field-note-2026-07-19-neptune.html" class="arc-card"><h3>Neptune</h3><p></p></a>
-<a href="archive/space-field-note-2026-07-18-uranus.html" class="arc-card"><h3>Uranus</h3><p></p></a>
-<a href="archive/space-field-note-2026-07-17-saturn.html" class="arc-card"><h3>Saturn</h3><p></p></a>
-<a href="archive/space-field-note-2026-07-16-jupiter.html" class="arc-card"><h3>Jupiter</h3><p></p></a>
-<a href="archive/space-field-note-2026-07-15-mars.html" class="arc-card"><h3>Mars</h3><p></p></a>
-<a href="archive/space-field-note-2026-07-14-venus.html" class="arc-card"><h3>Venus</h3><p></p></a>
-<a href="archive/space-field-note-2026-07-13-mercury.html" class="arc-card"><h3>Mercury</h3><p></p></a>
-<a href="archive/space-field-note-2026-07-12-comet-67p-churyumov-gerasimenko.html" class="arc-card"><h3>Comet 67P/Churyumov–Gerasimenko</h3><p></p></a>
-<a href="archive/space-field-note-2026-07-11-asteroid-psyche.html" class="arc-card"><h3>Asteroid Psyche</h3><p></p></a>
-<a href="archive/space-field-note-2026-07-10-asteroid-bennu.html" class="arc-card"><h3>Asteroid Bennu</h3><p></p></a>
-<a href="archive/space-field-note-2026-07-09-moon.html" class="arc-card"><h3>Moon</h3><p></p></a>
-<a href="archive/space-field-note-2026-07-08-neptune.html" class="arc-card"><h3>Neptune</h3><p></p></a>
-<a href="archive/space-field-note-2026-07-07-uranus.html" class="arc-card"><h3>Uranus</h3><p></p></a>
-<a href="archive/space-field-note-2026-07-06-saturn.html" class="arc-card"><h3>Saturn</h3><p></p></a>
-<a href="archive/space-field-note-2026-07-05-jupiter.html" class="arc-card"><h3>Jupiter</h3><p></p></a>
-<a href="archive/space-field-note-2026-07-04-mars.html" class="arc-card"><h3>Mars</h3><p></p></a>
-<a href="archive/space-field-note-2026-07-03-venus.html" class="arc-card"><h3>Venus</h3><p></p></a>
-<a href="archive/space-field-note-2026-07-02-mercury.html" class="arc-card"><h3>Mercury</h3><p></p></a>
-<a href="archive/space-field-note-2026-07-01-comet-67p-churyumov-gerasimenko.html" class="arc-card"><h3>Comet 67P/Churyumov–Gerasimenko</h3><p></p></a>
-<a href="archive/space-field-note-2026-06-30-uranus.html" class="arc-card"><h3>Uranus</h3><p></p></a>
-<a href="archive/space-field-note-2026-06-29-saturn.html" class="arc-card"><h3>Saturn</h3><p></p></a>
-<a href="archive/space-field-note-2026-06-28-jupiter.html" class="arc-card"><h3>Jupiter</h3><p></p></a>
-<a href="archive/space-field-note-2026-06-27-mars.html" class="arc-card"><h3>Mars</h3><p></p></a>
-<a href="archive/space-field-note-2026-06-26-venus.html" class="arc-card"><h3>Venus</h3><p></p></a>
-<a href="archive/space-field-note-2026-06-25-mercury.html" class="arc-card"><h3>Mercury</h3><p></p></a>
-<a href="archive/space-field-note-2026-06-24-comet-67p-churyumov-gerasimenko.html" class="arc-card"><h3>Comet 67P/Churyumov–Gerasimenko</h3><p></p></a>
-<a href="archive/space-field-note-2026-06-23-asteroid-psyche.html" class="arc-card"><h3>Asteroid Psyche</h3><p></p></a>
-<a href="archive/space-field-note-2026-06-22-asteroid-bennu.html" class="arc-card"><h3>Asteroid Bennu</h3><p></p></a>
-<a href="archive/space-field-note-2026-06-21-moon.html" class="arc-card"><h3>Moon</h3><p></p></a>
-<a href="archive/space-field-note-2026-06-20-neptune.html" class="arc-card"><h3>Neptune</h3><p></p></a>
-<a href="archive/space-field-note-2026-06-19-uranus.html" class="arc-card"><h3>Uranus</h3><p></p></a>
-<a href="archive/space-field-note-2026-06-18-saturn.html" class="arc-card"><h3>Saturn</h3><p></p></a>
-<a href="archive/space-field-note-2026-06-17-jupiter.html" class="arc-card"><h3>Jupiter</h3><p></p></a>
-<a href="archive/space-field-note-2026-06-16-mars.html" class="arc-card"><h3>Mars</h3><p></p></a>
-<a href="archive/space-field-note-2026-06-15-venus.html" class="arc-card"><h3>Venus</h3><p></p></a>
-<a href="archive/space-field-note-2026-06-14-mercury.html" class="arc-card"><h3>Mercury</h3><p></p></a>
-<a href="archive/space-field-note-2026-06-13-comet-67p-churyumov-gerasimenko.html" class="arc-card"><h3>Comet 67P/Churyumov–Gerasimenko</h3><p></p></a>
-<a href="archive/space-field-note-2026-06-12-asteroid-psyche.html" class="arc-card"><h3>Asteroid Psyche</h3><p></p></a>
+<a href="archive/space-field-note-2026-07-29-uranus.html" class="arc-card"><h3>Uranus</h3><p>The ice giant tilted on its side</p></a>
+<a href="archive/space-field-note-2026-07-28-saturn.html" class="arc-card"><h3>Saturn</h3><p>The ringed jewel of the outer Solar System</p></a>
+<a href="archive/space-field-note-2026-07-27-jupiter.html" class="arc-card"><h3>Jupiter</h3><p>The Solar System&amp;#x27;s gravitational sovereign</p></a>
+<a href="archive/space-field-note-2026-07-26-mars.html" class="arc-card"><h3>Mars</h3><p>The red planet that was once blue</p></a>
+<a href="archive/space-field-note-2026-07-25-venus.html" class="arc-card"><h3>Venus</h3><p>Earth&amp;#x27;s twin, remade by fire</p></a>
+<a href="archive/space-field-note-2026-07-24-mercury.html" class="arc-card"><h3>Mercury</h3><p>The iron heart of the Solar System</p></a>
+<a href="archive/space-field-note-2026-07-23-comet-67p-churyumov-gerasimenko.html" class="arc-card"><h3>Comet 67P</h3><p>The rubber duck from the dawn of time</p></a>
+<a href="archive/space-field-note-2026-07-22-asteroid-psyche.html" class="arc-card"><h3>Asteroid Psyche</h3><p>A possible exposed planetary core flying through space</p></a>
+<a href="archive/space-field-note-2026-07-21-asteroid-bennu.html" class="arc-card"><h3>Asteroid Bennu</h3><p>A carbon-rich time capsule from the dawn of the Solar System</p></a>
+<a href="archive/space-field-note-2026-07-20-moon.html" class="arc-card"><h3>Moon</h3><p>Earth&amp;#x27;s ancient companion and next frontier</p></a>
+<a href="archive/space-field-note-2026-07-19-neptune.html" class="arc-card"><h3>Neptune</h3><p>The blue world with supersonic winds</p></a>
+<a href="archive/space-field-note-2026-07-18-uranus.html" class="arc-card"><h3>Uranus</h3><p>The ice giant tilted on its side</p></a>
+<a href="archive/space-field-note-2026-07-17-saturn.html" class="arc-card"><h3>Saturn</h3><p>The ringed jewel of the outer Solar System</p></a>
+<a href="archive/space-field-note-2026-07-16-jupiter.html" class="arc-card"><h3>Jupiter</h3><p>The Solar System&amp;#x27;s gravitational sovereign</p></a>
+<a href="archive/space-field-note-2026-07-15-mars.html" class="arc-card"><h3>Mars</h3><p>The red planet that was once blue</p></a>
+<a href="archive/space-field-note-2026-07-14-venus.html" class="arc-card"><h3>Venus</h3><p>Earth&amp;#x27;s twin, remade by fire</p></a>
+<a href="archive/space-field-note-2026-07-13-mercury.html" class="arc-card"><h3>Mercury</h3><p>The iron heart of the Solar System</p></a>
+<a href="archive/space-field-note-2026-07-12-comet-67p-churyumov-gerasimenko.html" class="arc-card"><h3>Comet 67P</h3><p>The rubber duck from the dawn of time</p></a>
+<a href="archive/space-field-note-2026-07-11-asteroid-psyche.html" class="arc-card"><h3>Asteroid Psyche</h3><p>A possible exposed planetary core flying through space</p></a>
+<a href="archive/space-field-note-2026-07-10-asteroid-bennu.html" class="arc-card"><h3>Asteroid Bennu</h3><p>A carbon-rich time capsule from the dawn of the Solar System</p></a>
+<a href="archive/space-field-note-2026-07-09-moon.html" class="arc-card"><h3>Moon</h3><p>Earth&amp;#x27;s ancient companion and next frontier</p></a>
+<a href="archive/space-field-note-2026-07-08-neptune.html" class="arc-card"><h3>Neptune</h3><p>The blue world with supersonic winds</p></a>
+<a href="archive/space-field-note-2026-07-07-uranus.html" class="arc-card"><h3>Uranus</h3><p>The ice giant tilted on its side</p></a>
+<a href="archive/space-field-note-2026-07-06-saturn.html" class="arc-card"><h3>Saturn</h3><p>The ringed jewel of the outer Solar System</p></a>
+<a href="archive/space-field-note-2026-07-05-jupiter.html" class="arc-card"><h3>Jupiter</h3><p>The Solar System&amp;#x27;s gravitational sovereign</p></a>
+<a href="archive/space-field-note-2026-07-04-mars.html" class="arc-card"><h3>Mars</h3><p>The red planet that was once blue</p></a>
+<a href="archive/space-field-note-2026-07-03-venus.html" class="arc-card"><h3>Venus</h3><p>Earth&amp;#x27;s twin, remade by fire</p></a>
+<a href="archive/space-field-note-2026-07-02-mercury.html" class="arc-card"><h3>Mercury</h3><p>The iron heart of the Solar System</p></a>
+<a href="archive/space-field-note-2026-07-01-comet-67p-churyumov-gerasimenko.html" class="arc-card"><h3>Comet 67P</h3><p>The rubber duck from the dawn of time</p></a>
+<a href="archive/space-field-note-2026-06-30-uranus.html" class="arc-card"><h3>Uranus</h3><p>The ice giant tilted on its side</p></a>
+<a href="archive/space-field-note-2026-06-29-saturn.html" class="arc-card"><h3>Saturn</h3><p>The ringed jewel of the outer Solar System</p></a>
+<a href="archive/space-field-note-2026-06-28-jupiter.html" class="arc-card"><h3>Jupiter</h3><p>The Solar System&amp;#x27;s gravitational sovereign</p></a>
+<a href="archive/space-field-note-2026-06-27-mars.html" class="arc-card"><h3>Mars</h3><p>The red planet that was once blue</p></a>
+<a href="archive/space-field-note-2026-06-26-venus.html" class="arc-card"><h3>Venus</h3><p>Earth&amp;#x27;s twin, remade by fire</p></a>
+<a href="archive/space-field-note-2026-06-25-mercury.html" class="arc-card"><h3>Mercury</h3><p>The iron heart of the Solar System</p></a>
+<a href="archive/space-field-note-2026-06-24-comet-67p-churyumov-gerasimenko.html" class="arc-card"><h3>Comet 67P</h3><p>The rubber duck from the dawn of time</p></a>
+<a href="archive/space-field-note-2026-06-23-asteroid-psyche.html" class="arc-card"><h3>Asteroid Psyche</h3><p>A possible exposed planetary core flying through space</p></a>
+<a href="archive/space-field-note-2026-06-22-asteroid-bennu.html" class="arc-card"><h3>Asteroid Bennu</h3><p>A carbon-rich time capsule from the dawn of the Solar System</p></a>
+<a href="archive/space-field-note-2026-06-21-moon.html" class="arc-card"><h3>Moon</h3><p>Earth&amp;#x27;s ancient companion and next frontier</p></a>
+<a href="archive/space-field-note-2026-06-20-neptune.html" class="arc-card"><h3>Neptune</h3><p>The blue world with supersonic winds</p></a>
+<a href="archive/space-field-note-2026-06-19-uranus.html" class="arc-card"><h3>Uranus</h3><p>The ice giant tilted on its side</p></a>
+<a href="archive/space-field-note-2026-06-18-saturn.html" class="arc-card"><h3>Saturn</h3><p>The ringed jewel of the outer Solar System</p></a>
+<a href="archive/space-field-note-2026-06-17-jupiter.html" class="arc-card"><h3>Jupiter</h3><p>The Solar System&amp;#x27;s gravitational sovereign</p></a>
+<a href="archive/space-field-note-2026-06-16-mars.html" class="arc-card"><h3>Mars</h3><p>The red planet that was once blue</p></a>
+<a href="archive/space-field-note-2026-06-15-venus.html" class="arc-card"><h3>Venus</h3><p>Earth&amp;#x27;s twin, remade by fire</p></a>
+<a href="archive/space-field-note-2026-06-14-mercury.html" class="arc-card"><h3>Mercury</h3><p>The iron heart of the Solar System</p></a>
+<a href="archive/space-field-note-2026-06-13-comet-67p-churyumov-gerasimenko.html" class="arc-card"><h3>Comet 67P</h3><p>The rubber duck from the dawn of time</p></a>
+<a href="archive/space-field-note-2026-06-12-asteroid-psyche.html" class="arc-card"><h3>Asteroid Psyche</h3><p>A possible exposed planetary core flying through space</p></a>
 <p class="ft"><a href="https://shenoyabhijith.github.io/indian-mythology-digest/">Also see Indian Mythology Digest</a></p>
 </div>
 </body>

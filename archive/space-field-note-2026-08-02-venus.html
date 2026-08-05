@@ -1,161 +1,185 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Venus — Daily Space Field Note</title>
-  <link rel="canonical" href="https://shenoyabhijith.github.io/daily-space-digest/">
-  <style>
-    :root {
-      --h:79;
-      --ink:#101828;
-      --muted:#5f6b7e;
-      --line:#e2e4e9;
-      --paper:#fcfbf9;
-      --accent:hsl(var(--h), 78%, 40%);
-      --accent2:hsl(calc(var(--h) + 50), 75%, 48%);
-      --accent-light:hsl(var(--h), 70%, 92%);
-      --font:'Inter','Segoe UI','system-ui',-apple-system,sans-serif;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{background:var(--paper);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
-    .wrap{max-width:1000px;margin:0 auto;padding:0 20px 48px}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#17181a">
+<title>Venus — Daily Space Field Note</title>
+<link rel="canonical" href="https://shenoyabhijith.github.io/daily-space-digest/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2064%2064%27%3E%3Crect%20width%3D%2764%27%20height%3D%2764%27%20rx%3D%2714%27%20fill%3D%27%2317181a%27/%3E%3Ccircle%20cx%3D%2732%27%20cy%3D%2732%27%20r%3D%2711%27%20fill%3D%27%233d9aff%27/%3E%3Cellipse%20cx%3D%2732%27%20cy%3D%2732%27%20rx%3D%2721%27%20ry%3D%276.5%27%20fill%3D%27none%27%20stroke%3D%27%23f2f3f4%27%20stroke-width%3D%273%27%20transform%3D%27rotate%28-18%2032%2032%29%27/%3E%3C/svg%3E">
+<style>
+:root{
+  --page:#141518;--surface:#26272c;--field:#2f3035;--inset:#1e1f23;--hover:#2e2f34;
+  --line:#33353a;--line-strong:#43454c;
+  --ink:#f2f3f4;--ink-2:#a5a8ad;--ink-3:#6c6f75;
+  --accent:#3d9aff;--accent-tint:rgba(61,154,255,.13);--accent-ink:#3d9aff;
+  --green:#3dbb72;--orange:#f68f3c;--red:#ee5c61;
+  --shadow-card:0 0 0 1px #33353a,0 1px 2px rgba(0,0,0,.25),0 4px 14px rgba(0,0,0,.25);
+  --shadow-hairline:0 0 0 1px #33353a;
+  --shadow-btn:0 0 0 1px #43454c,0 1px 2px rgba(0,0,0,.35);
+  --shadow-raised:0 0 0 1px #33353a,0 6px 24px rgba(0,0,0,.4);
+  --radius:12px;
+}
+html.light{
+  --page:#f7f7f8;--surface:#ffffff;--field:#e9e9ec;--inset:#f2f2f4;--hover:#ececef;
+  --line:#e3e3e7;--line-strong:#d6d6dc;
+  --ink:#191a1c;--ink-2:#5c5f66;--ink-3:#9a9da3;
+  --accent:#2d7fe0;--accent-tint:rgba(45,127,224,.1);--accent-ink:#1d63b8;
+  --shadow-card:0 0 0 1px #e3e3e7,0 1px 2px rgba(0,0,0,.08),0 2px 6px rgba(0,0,0,.05);
+  --shadow-hairline:0 0 0 1px #e3e3e7;
+  --shadow-btn:0 0 0 1px #d6d6dc,0 1px 2px rgba(0,0,0,.12);
+  --shadow-raised:0 0 0 1px #e3e3e7,0 2px 10px rgba(0,0,0,.08);
+}
+@font-face{font-family:'Inter Variable';font-style:normal;font-display:swap;font-weight:100 900;src:url(../assets/fonts/inter-latin.woff2)format('woff2');}
+@font-face{font-family:'Inter Variable';font-style:normal;font-display:swap;font-weight:100 900;src:url(../assets/fonts/inter-latin-ext.woff2)format('woff2');}
+@font-face{font-family:'JetBrains Mono Variable';font-style:normal;font-display:swap;font-weight:100 800;src:url(../assets/fonts/jb-mono-latin.woff2)format('woff2');}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--page);color:var(--ink);font-family:'Inter Variable',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;font-size:17px;line-height:1.75;-webkit-font-smoothing:antialiased;transition:background-color .2s,color .2s}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px 64px}
+/* Header */
+.hdr{position:sticky;top:0;z-index:30;border-bottom:1px solid var(--line);background:var(--page);background:color-mix(in srgb,var(--page) 85%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.hdr-in{max-width:920px;margin:0 auto;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 20px}
+.brand{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:-.01em;text-decoration:none;color:var(--ink)}
+.mark{width:28px;height:28px;border-radius:8px;background:var(--ink);color:var(--surface);display:grid;place-items:center;font-size:12px}
+.tgl{display:inline-flex;align-items:center;gap:2px;background:var(--field);border-radius:999px;padding:3px;box-shadow:var(--shadow-hairline)}
+.tgl button{width:26px;height:26px;border:none;border-radius:999px;background:transparent;color:var(--ink-3);display:grid;place-items:center;cursor:pointer;transition:.15s}
+.tgl button.on{background:var(--surface);color:var(--ink);box-shadow:var(--shadow-btn)}
+.tgl svg{width:14px;height:14px}
+/* Masthead */
+.mast{padding:56px 0 28px;border-bottom:1px solid var(--line);margin-bottom:28px}
+.kicker{font-family:'JetBrains Mono Variable',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:14px}
+.mast h1{font-size:clamp(40px,7vw,64px);letter-spacing:-.045em;line-height:1.02;font-weight:700;margin-bottom:8px}
+.subtitle{font-size:clamp(17px,2.4vw,22px);color:var(--ink-2);font-weight:400}
+.meta{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px 16px;font-family:'JetBrains Mono Variable',monospace;font-size:12.5px;color:var(--ink-3)}
+.meta .dot{opacity:.5}
+/* Lead */
+.lead{margin:28px 0;padding:22px 24px;background:var(--accent-tint);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:var(--radius);font-size:19px;line-height:1.7;color:var(--ink)}
+/* Hero */
+.hero{margin-bottom:32px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--surface);box-shadow:var(--shadow-card)}
+.hero img{display:block;width:100%;height:auto;max-height:560px;object-fit:cover}
+.hero-cap{padding:12px 18px;font-size:13.5px;color:var(--ink-3);border-top:1px solid var(--line);font-family:'JetBrains Mono Variable',monospace}
+.hero-cap strong{color:var(--ink-2);font-weight:600}
+/* Layout */
+.content-layout{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:28px;align-items:start}
+@media(max-width:840px){.content-layout{grid-template-columns:1fr}}
+/* Cards */
+.card{background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--radius);box-shadow:var(--shadow-card)}
+.section{padding:24px 26px;margin-bottom:20px;border-left:3px solid transparent;transition:border-color .15s}
+.section:hover{border-left-color:var(--accent)}
+.eyebrow{font-family:'JetBrains Mono Variable',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:10px}
+.section h2{font-size:21px;letter-spacing:-.02em;margin-bottom:10px;color:var(--ink)}
+.section .body{font-size:16.5px;line-height:1.8;color:var(--ink-2);white-space:pre-line}
+/* Stats */
+.stats-card{padding:20px;position:sticky;top:76px}
+.stats-grid{display:grid;gap:0}
+.stat{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}
+.stat:last-child{border-bottom:none}
+.stat-label{font-size:12.5px;color:var(--ink-3)}
+.stat-value{font-size:13.5px;font-weight:600;text-align:right;white-space:nowrap;font-family:'JetBrains Mono Variable',monospace;color:var(--ink)}
+/* APOD */
+.apod{margin:20px 0 28px;padding:24px 26px;background:var(--accent-tint);border:1px solid var(--line);border-radius:var(--radius)}
+.apod h3{font-size:18px;margin:6px 0 8px}
+.apod p{font-size:15px;color:var(--ink-2);line-height:1.65;margin-bottom:14px}
+/* Buttons */
+.pill{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:999px;font-size:13.5px;font-weight:600;text-decoration:none;transition:.15s;border:1px solid transparent}
+.pill-primary{background:var(--accent);color:#fff}
+.pill-primary:hover{filter:brightness(1.08)}
+/* Sources */
+.sources{padding:24px 26px;margin-top:4px}
+.sources ul{list-style:none}
+.sources li{margin-bottom:8px}
+.sources a{color:var(--accent);text-decoration:none;font-size:15px;font-weight:500;border-bottom:1px solid transparent;transition:.15s}
+.sources a:hover{border-bottom-color:var(--accent)}
+.sources li::before{content:'→ ';color:var(--ink-3);font-family:'JetBrains Mono Variable',monospace;font-size:13px}
+/* Footer */
+.footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--ink-3);font-size:13px}
+.footer a{color:var(--accent);text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
 
-    /* Masthead */
-    .mast{
-      padding:48px 0 28px;border-bottom:1px solid var(--line);margin-bottom:32px;
-      display:flex;flex-wrap:wrap;gap:12px 24px;align-items:flex-end;justify-content:space-between
-    }
-    .mast-left h1{font-size:clamp(36px,6vw,60px);letter-spacing:-.05em;line-height:1.05;margin:0 0 4px}
-    .mast-left .subtitle{font-size:clamp(18px,2.5vw,28px);color:var(--muted);font-weight:400}
-    .mast-left .kicker{color:var(--accent);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px}
-    .mast-right{text-align:right;color:var(--muted);font-size:14px;line-height:1.5;flex-shrink:0}
+</style>
+<script>
+(function(){
+  var t;try{t=localStorage.getItem('ds-theme')}catch(e){}
+  if(t==='light')document.documentElement.classList.add('light');
+})();
+function setTheme(m){
+  try{localStorage.setItem('ds-theme',m)}catch(e){}
+  document.documentElement.classList.toggle('light',m==='light');
+  var a=document.getElementById('t-light'),b=document.getElementById('t-dark');
+  if(a&&b){a.classList.toggle('on',m==='light');b.classList.toggle('on',m!=='light');}
+}
 
-    /* Lead */
-    .lead{
-      font-size:20px;line-height:1.7;color:#334155;margin-bottom:36px;
-      padding:20px 24px;background:var(--accent-light);border-radius:16px;
-      border-left:4px solid var(--accent);
-    }
-
-    /* Hero image */
-    .hero-wrap{margin-bottom:36px;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:#111}
-    .hero-wrap img{display:block;width:100%;height:auto;max-height:560px;object-fit:cover}
-    .hero-cap{padding:14px 20px;font-size:14px;color:var(--muted);background:#fff}
-    .hero-cap strong{color:var(--ink)}
-
-    /* Content layout: main + sidebar */
-    .content-layout{display:grid;grid-template-columns:1fr 300px;gap:32px;align-items:start}
-    @media(max-width:820px){.content-layout{grid-template-columns:1fr}}
-
-    /* Narrative sections */
-    .section{margin-bottom:28px}
-    .section h2{font-size:21px;color:var(--accent);margin-bottom:8px;font-weight:700;letter-spacing:-.02em}
-    .section .body{color:#334155;font-size:17px;line-height:1.8}
-
-    /* Stats card (sidebar) */
-    .stats-card{
-      background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;
-      position:sticky;top:16px
-    }
-    .stats-card h3{font-size:15px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:16px;font-weight:700}
-    .stats-grid{display:grid;gap:10px}
-    .stat{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px solid #f0f1f3}
-    .stat:last-child{border-bottom:none}
-    .stat-label{font-size:13px;color:var(--muted)}
-    .stat-value{font-size:15px;font-weight:600;text-align:right;white-space:nowrap}
-
-    /* APOD callout */
-    .apod-card{
-      margin:32px 0;padding:20px 24px;background:#fff;border:1px solid var(--line);
-      border-radius:16px
-    }
-    .apod-eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700}
-    .apod-card h3{font-size:18px;margin:6px 0 8px;color:var(--ink)}
-    .apod-card p{font-size:15px;color:#334155;line-height:1.6}
-    .btn-ghost{display:inline-block;margin-top:8px;padding:8px 16px;border:1px solid var(--accent);color:var(--accent);border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;transition:.15s}
-    .btn-ghost:hover{background:var(--accent);color:#fff}
-
-    /* Sources */
-    .sources{
-      margin-top:32px;padding:24px;background:#fff;border:1px solid var(--line);border-radius:16px
-    }
-    .sources h3{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:12px;font-weight:700}
-    .sources ul{list-style:none;padding:0}
-    .sources li{margin-bottom:6px}
-    .sources a{color:var(--accent);text-decoration:none;font-size:15px;font-weight:500}
-    .sources a:hover{text-decoration:underline}
-
-    /* Footer */
-    .footer{
-      margin-top:36px;padding-top:20px;border-top:1px solid var(--line);
-      display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
-      color:var(--muted);font-size:13px
-    }
-    .footer a{color:var(--accent);text-decoration:none}
-  </style>
+</script>
 </head>
 <body>
+
+<header class="hdr">
+  <div class="hdr-in">
+    <a class="brand" href="https://shenoyabhijith.github.io/daily-space-digest/"><span class="mark">☄</span>Daily Space Field Note</a>
+    <div class="tgl" role="group" aria-label="Theme">
+      <button id="t-light" aria-label="Light mode" onclick="setTheme('light')"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.2' stroke-linecap='round'><circle cx='12' cy='12' r='4' fill='currentColor' stroke='none'/><path d='M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4'/></svg></button>
+      <button id="t-dark" class="on" aria-label="Dark mode" onclick="setTheme('dark')"><svg viewBox='0 0 24 24' fill='currentColor'><path d='M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z'/></svg></button>
+    </div>
+  </div>
+</header>
+
 <div class="wrap">
 
   <header class="mast">
-    <div class="mast-left">
-      <div class="kicker">☄ Daily Space Field Note</div>
-      <h1>Venus</h1>
-      <div class="subtitle">Earth&#x27;s twin, remade by fire</div>
-    </div>
-    <div class="mast-right">
-      Sunday, August 2, 2026<br>
-      ~4 min read
+    <p class="kicker">☄ Daily Space Field Note</p>
+    <h1>Venus</h1>
+    <div class="subtitle">Earth&#x27;s twin, remade by fire</div>
+    <div class="meta">
+      <span>Sunday, August 2, 2026</span>
+      <span class="dot">·</span>
+      <span>~4 min read</span>
     </div>
   </header>
 
   <p class="lead">Venus is nearly identical to Earth in size, mass, and composition — close enough that astronomers once called it Earth&#x27;s twin. But look closer, and the resemblance ends. Venus is a cautionary tale written in sulfuric acid: what happens when a planet&#x27;s greenhouse effect runs away, transforming a potentially habitable world into a 465°C pressure cooker where the atmosphere weighs as much as a kilometer of ocean.</p>
-
-  <div class="hero-wrap"><img src="https://images-assets.nasa.gov/image/PIA00465/PIA00465~medium.jpg" alt="Venus - Comparison of Venera and Magellan Resolutions" loading="lazy"><div class="hero-cap"><strong>Venus - Comparison of Venera and Magellan Resolutions</strong> — These radar images show an identical area on Venus (centered at 110 degrees longitude and 64 degrees north latitude) as imaged by the U.S. NASA Magellan spacecraft in 1991 (left) and the U.S.S.R. Venera 15/16 spacecraft in the early 1980&#x27;s (right). Illumination is from the left (or west) in the Mage</div></div>
+  <figure class="hero"><img src="https://images-assets.nasa.gov/image/PIA00465/PIA00465~medium.jpg" alt="Venus - Comparison of Venera and Magellan Resolutions" loading="lazy"><figcaption class="hero-cap"><strong>Venus - Comparison of Venera and Magellan Resolutions</strong> — Venus - Comparison of Venera and Magellan Resolutions</figcaption></figure>
 
   <div class="content-layout">
     <main>
-      <article class="section">
-  <h2>◆ Discovery &amp; Naming</h2>
+      <article class="card section">
+  <p class="eyebrow">Section 01</p>
+  <h2>Discovery &amp; Naming</h2>
   <div class="body">Venus has been a fixture of human skywatching longer than recorded history. Its brilliance — the third-brightest object in Earth&#x27;s sky after the Sun and Moon — made it a cultural landmark for civilizations everywhere. The Babylonians called it Ishtar, the Greeks named it after Aphrodite (goddess of love and beauty), and the Romans gave us the name we use today. Ancient astronomers recognized it as both the morning star and the evening star, but it took Pythagoras in the 6th century BCE to realize they were the same object. Through early telescopes, Venus appeared as a featureless, brilliant disk — no surface details, no moons, no rings. Its true nature remained hidden beneath a global cloud deck so thick that it would be centuries before anyone saw the ground.</div>
-</article><article class="section">
-  <h2>◆ Physical Profile</h2>
+</article><article class="card section">
+  <p class="eyebrow">Section 02</p>
+  <h2>Physical Profile</h2>
   <div class="body">Venus is almost a perfect twin of Earth in bulk properties: 12,104 km in diameter (95% of Earth&#x27;s), 81.5% of Earth&#x27;s mass, and a similar bulk composition of silicate rock and iron. But the similarities stop at the crust. A slow, retrograde rotation — one Venusian day lasts 243 Earth days, longer than its year of 225 Earth days — means Venus technically spins backwards compared to most planets. The surface itself is relatively young, geologically speaking, with vast volcanic plains, thousands of volcanoes (including some over 8 km tall), and two continent-sized highlands: Ishtar Terra and Aphrodite Terra. At some point in the last 300-500 million years, Venus appears to have undergone a global resurfacing event — possibly catastrophic, planet-wide volcanism — that erased most of its ancient craters and repaved the entire surface.</div>
-</article><article class="section">
-  <h2>◆ The Hellish Surface — Runaway Greenhouse Made Real</h2>
+</article><article class="card section">
+  <p class="eyebrow">Section 03</p>
+  <h2>The Hellish Surface — Runaway Greenhouse Made Real</h2>
   <div class="body">Venus is the hottest planet in the Solar System, not because it is closest to the Sun (Mercury is), but because its atmosphere is a 92-bar blanket of carbon dioxide with clouds of sulfuric acid. The surface temperature is a uniform 465°C — hot enough to melt lead — day and night, pole to equator. The atmospheric pressure is crushing: 92 times Earth&#x27;s, equivalent to being 900 meters underwater. The Soviet Venera landers that managed to survive the descent transmitted the only direct images we have of the Venusian surface — a flat, orange-lit landscape of fractured volcanic rock under a sky so thick with CO2 that sunlight filters through as diffuse orange twilight. The longest any lander survived on the surface was just over two hours before its electronics failed. The runaway greenhouse on Venus is not a hypothetical future for Earth — it is a real, complete example of what happens when atmospheric CO2 concentrations cross a catastrophic threshold, trapping heat so efficiently that even the oceans would have boiled away entirely.</div>
-</article><article class="section">
-  <h2>◆ Exploration History — Robots on Hell&#x27;s Front Porch</h2>
+</article><article class="card section">
+  <p class="eyebrow">Section 04</p>
+  <h2>Exploration History — Robots on Hell&#x27;s Front Porch</h2>
   <div class="body">Venus has been visited by more spacecraft than any other planet besides Mars, though most met spectacularly short lives. The Soviet Venera program was the undisputed pioneer: Venera 7 made the first successful landing on another planet in 1970, surviving 23 minutes on the surface. Venera 9 returned the first image from another world&#x27;s surface in 1975 — a grainy, panoramic view of a rocky, orange landscape. In total, 10 Venera landers successfully touched down, each revealing more about the chemistry and geology. NASA&#x27;s Magellan mission (1990-1994) used synthetic aperture radar to map 98% of the Venusian surface through the clouds, revealing a world of volcanoes, lava channels, and impact craters at a resolution of 100 meters. More recently, interest has surged: NASA&#x27;s VERITAS and DAVINCI missions, and ESA&#x27;s EnVision, are all planned for the 2030s, equipped with next-generation radar and atmospheric probes that could finally tell us whether Venus was once wet and temperate — and what turned it into the hellscape it is today.</div>
-</article><article class="section">
-  <h2>◆ Why It Captivates Us</h2>
+</article><article class="card section">
+  <p class="eyebrow">Section 05</p>
+  <h2>Why It Captivates Us</h2>
   <div class="body">Venus is a mirror — distorted and terrifying. It began its life with nearly the same ingredients as Earth, in the same neighborhood, under the same Sun. And it went catastrophically wrong. Understanding Venus means understanding the difference between a living planet and a dead one. It is the most powerful argument for why atmospheric composition matters, why we study exoplanets with care, and why our own planetary thermostat must be handled with wisdom. The question that haunts planetary science is not whether Venus was once habitable — it almost certainly had oceans for hundreds of millions of years — but whether we would recognize the signs of life there if it existed before the planet turned into an oven.</div>
 </article>
       
-<section class="apod-card">
-  <span class="apod-eyebrow">✦ NASA Astronomy Picture of the Day</span>
-  <h3>A Fire Rainbow over West Virginia</h3>
-  <p>What&#x27;s happening to this cloud? Ice crystals in a distant cirrus cloud are acting like little floating prisms. Known informally as a fire rainbow for its flame-like appearance, a circumhorizon arc appears parallel to the horizon. For a circumhorizontal arc to be visible, the Sun must be at least 58 degrees high in a sky where cirrus clouds present below -- in this case cirrus fibratus. The numerou</p>
-  <a class="btn-ghost" href="https://apod.nasa.gov/apod/" target="_blank">View full image →</a>
-</section>
     </main>
     <aside>
-      <aside class="stats-card">
-  <h3>Quick Facts</h3>
+      <aside class="card stats-card">
+  <p class="eyebrow">Quick Facts</p>
   <div class="stats-grid"><div class="stat"><span class="stat-label">Diameter</span><span class="stat-value">12,104 km</span></div><div class="stat"><span class="stat-label">Surface pressure</span><span class="stat-value">92 atm</span></div><div class="stat"><span class="stat-label">Surface temp</span><span class="stat-value">465°C</span></div><div class="stat"><span class="stat-label">Day (retrograde)</span><span class="stat-value">243 Earth days</span></div><div class="stat"><span class="stat-label">Year</span><span class="stat-value">225 Earth days</span></div><div class="stat"><span class="stat-label">Atmosphere</span><span class="stat-value">96.5% CO₂</span></div><div class="stat"><span class="stat-label">Gravity</span><span class="stat-value">0.91 g</span></div><div class="stat"><span class="stat-label">Rotation</span><span class="stat-value">Retrograde</span></div></div>
 </aside>
     </aside>
   </div>
 
-  <section class="sources">
-    <h3>Sources &amp; Further Reading</h3>
+  <section class="card sources">
+    <p class="eyebrow">Sources &amp; Further Reading</p>
     <ul><li><a href="https://science.nasa.gov/venus/">NASA Solar System — Venus</a></li>
 <li><a href="https://science.nasa.gov/mission/magellan/">NASA Magellan Mission</a></li>
 <li><a href="https://science.nasa.gov/mission/davinci/">NASA DAVINCI Mission</a></li>
 <li><a href="https://www.esa.int/Science_Exploration/Space_Science/EnVision">ESA EnVision</a></li>
-<li><a href="https://images.nasa.gov/search-results?q=Venus%20surface%20Venera%20Magellan%20radar%20NASA">NASA Image and Video Library</a></li>
-<li><a href="https://apod.nasa.gov/apod/">NASA APOD</a></li>
+<li><a href="https://images.nasa.gov/">NASA Image and Video Library</a></li>
 </ul>
   </section>
 

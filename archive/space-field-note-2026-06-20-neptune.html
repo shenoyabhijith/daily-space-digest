@@ -1,101 +1,197 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Space Field Note — Neptune</title>
-  <style>
-    :root { --h:217; --ink:#101828; --muted:#667085; --paper:#fffaf0; --line:#eadfc9; --accent:hsl(var(--h), 82%, 42%); --accent2:hsl(calc(var(--h) + 42), 80%, 50%); }
-    * { box-sizing: border-box; }
-    body { margin:0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; color:var(--ink); background: radial-gradient(circle at top left, hsl(var(--h), 90%, 92%), transparent 32rem), linear-gradient(135deg, #fffdf7, #f5f7fb 55%, #eef6ff); }
-    .wrap { max-width: 1120px; margin:0 auto; padding: 34px 22px 60px; }
-    .mast { display:flex; gap:18px; align-items:center; margin-bottom:24px; }
-    .badge { width:58px; height:58px; border-radius:19px; display:grid; place-items:center; color:white; font-size:30px; background:linear-gradient(135deg,var(--accent),var(--accent2)); box-shadow:0 18px 40px rgba(16,24,40,.18); }
-    .kicker { color:var(--accent); font-weight:800; letter-spacing:.16em; text-transform:uppercase; font-size:12px; }
-    h1 { font-size: clamp(42px, 8vw, 88px); line-height:.9; margin:8px 0 12px; letter-spacing:-.07em; }
-    .subtitle { font-size: clamp(20px, 3vw, 34px); color:#344054; margin:0; max-width:900px; }
-    .hero { margin-top:28px; display:grid; grid-template-columns: 1.25fr .75fr; gap:22px; align-items:stretch; }
-    .image-card, .card { border:1px solid rgba(16,24,40,.10); background:rgba(255,255,255,.78); backdrop-filter: blur(14px); border-radius:32px; overflow:hidden; box-shadow:0 20px 50px rgba(16,24,40,.10); }
-    .image-card img { display:block; width:100%; height:520px; object-fit:cover; background:#111827; }
-    .caption { padding:18px 22px; color:var(--muted); font-size:14px; }
-    .card { padding:26px; }
-    .eyebrow { color:var(--accent); font-weight:900; letter-spacing:.12em; text-transform:uppercase; font-size:12px; }
-    h2 { font-size:30px; letter-spacing:-.03em; margin:8px 0 12px; }
-    p { font-size:17px; line-height:1.65; }
-    .stats { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:12px; margin-top:18px; }
-    .stat { padding:14px; background:#fff; border:1px solid var(--line); border-radius:18px; }
-    .stat span { display:block; color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.08em; font-weight:800; }
-    .stat strong { display:block; margin-top:4px; font-size:18px; }
-    .grid { display:grid; grid-template-columns: 1fr 1fr; gap:22px; margin-top:22px; }
-    .composition { border-left:8px solid var(--accent); }
-    .spark { font-size:20px; padding:18px; border-radius:22px; background:linear-gradient(135deg, hsl(var(--h), 92%, 94%), #fff); border:1px solid var(--line); }
-    .sources ul { margin:12px 0 0; padding-left:20px; }
-    a { color:var(--accent); font-weight:800; }
-    .button { display:inline-block; margin-top:10px; padding:11px 14px; border-radius:999px; color:white; text-decoration:none; background:linear-gradient(135deg,var(--accent),var(--accent2)); }
-    .ghost { background:#fff; border:1px solid var(--line); color:var(--accent); }
-    .footer { margin-top:28px; color:var(--muted); font-size:13px; }
-    @media (max-width: 820px) { .hero,.grid { grid-template-columns:1fr; } .image-card img { height:360px; } .stats { grid-template-columns:1fr; } }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#17181a">
+<title>Neptune — Daily Space Field Note</title>
+<link rel="canonical" href="https://shenoyabhijith.github.io/daily-space-digest/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2064%2064%27%3E%3Crect%20width%3D%2764%27%20height%3D%2764%27%20rx%3D%2714%27%20fill%3D%27%2317181a%27/%3E%3Ccircle%20cx%3D%2732%27%20cy%3D%2732%27%20r%3D%2711%27%20fill%3D%27%233d9aff%27/%3E%3Cellipse%20cx%3D%2732%27%20cy%3D%2732%27%20rx%3D%2721%27%20ry%3D%276.5%27%20fill%3D%27none%27%20stroke%3D%27%23f2f3f4%27%20stroke-width%3D%273%27%20transform%3D%27rotate%28-18%2032%2032%29%27/%3E%3C/svg%3E">
+<style>
+:root{
+  --page:#141518;--surface:#26272c;--field:#2f3035;--inset:#1e1f23;--hover:#2e2f34;
+  --line:#33353a;--line-strong:#43454c;
+  --ink:#f2f3f4;--ink-2:#a5a8ad;--ink-3:#6c6f75;
+  --accent:#3d9aff;--accent-tint:rgba(61,154,255,.13);--accent-ink:#3d9aff;
+  --green:#3dbb72;--orange:#f68f3c;--red:#ee5c61;
+  --shadow-card:0 0 0 1px #33353a,0 1px 2px rgba(0,0,0,.25),0 4px 14px rgba(0,0,0,.25);
+  --shadow-hairline:0 0 0 1px #33353a;
+  --shadow-btn:0 0 0 1px #43454c,0 1px 2px rgba(0,0,0,.35);
+  --shadow-raised:0 0 0 1px #33353a,0 6px 24px rgba(0,0,0,.4);
+  --radius:12px;
+}
+html.light{
+  --page:#f7f7f8;--surface:#ffffff;--field:#e9e9ec;--inset:#f2f2f4;--hover:#ececef;
+  --line:#e3e3e7;--line-strong:#d6d6dc;
+  --ink:#191a1c;--ink-2:#5c5f66;--ink-3:#9a9da3;
+  --accent:#2d7fe0;--accent-tint:rgba(45,127,224,.1);--accent-ink:#1d63b8;
+  --shadow-card:0 0 0 1px #e3e3e7,0 1px 2px rgba(0,0,0,.08),0 2px 6px rgba(0,0,0,.05);
+  --shadow-hairline:0 0 0 1px #e3e3e7;
+  --shadow-btn:0 0 0 1px #d6d6dc,0 1px 2px rgba(0,0,0,.12);
+  --shadow-raised:0 0 0 1px #e3e3e7,0 2px 10px rgba(0,0,0,.08);
+}
+@font-face{font-family:'Inter Variable';font-style:normal;font-display:swap;font-weight:100 900;src:url(../assets/fonts/inter-latin.woff2)format('woff2');}
+@font-face{font-family:'Inter Variable';font-style:normal;font-display:swap;font-weight:100 900;src:url(../assets/fonts/inter-latin-ext.woff2)format('woff2');}
+@font-face{font-family:'JetBrains Mono Variable';font-style:normal;font-display:swap;font-weight:100 800;src:url(../assets/fonts/jb-mono-latin.woff2)format('woff2');}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--page);color:var(--ink);font-family:'Inter Variable',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;font-size:17px;line-height:1.75;-webkit-font-smoothing:antialiased;transition:background-color .2s,color .2s}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px 64px}
+/* Header */
+.hdr{position:sticky;top:0;z-index:30;border-bottom:1px solid var(--line);background:var(--page);background:color-mix(in srgb,var(--page) 85%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.hdr-in{max-width:920px;margin:0 auto;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 20px}
+.brand{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:-.01em;text-decoration:none;color:var(--ink)}
+.mark{width:28px;height:28px;border-radius:8px;background:var(--ink);color:var(--surface);display:grid;place-items:center;font-size:12px}
+.tgl{display:inline-flex;align-items:center;gap:2px;background:var(--field);border-radius:999px;padding:3px;box-shadow:var(--shadow-hairline)}
+.tgl button{width:26px;height:26px;border:none;border-radius:999px;background:transparent;color:var(--ink-3);display:grid;place-items:center;cursor:pointer;transition:.15s}
+.tgl button.on{background:var(--surface);color:var(--ink);box-shadow:var(--shadow-btn)}
+.tgl svg{width:14px;height:14px}
+/* Masthead */
+.mast{padding:56px 0 28px;border-bottom:1px solid var(--line);margin-bottom:28px}
+.kicker{font-family:'JetBrains Mono Variable',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:14px}
+.mast h1{font-size:clamp(40px,7vw,64px);letter-spacing:-.045em;line-height:1.02;font-weight:700;margin-bottom:8px}
+.subtitle{font-size:clamp(17px,2.4vw,22px);color:var(--ink-2);font-weight:400}
+.meta{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px 16px;font-family:'JetBrains Mono Variable',monospace;font-size:12.5px;color:var(--ink-3)}
+.meta .dot{opacity:.5}
+/* Lead */
+.lead{margin:28px 0;padding:22px 24px;background:var(--accent-tint);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:var(--radius);font-size:19px;line-height:1.7;color:var(--ink)}
+/* Hero */
+.hero{margin-bottom:32px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--surface);box-shadow:var(--shadow-card)}
+.hero img{display:block;width:100%;height:auto;max-height:560px;object-fit:cover}
+.hero-cap{padding:12px 18px;font-size:13.5px;color:var(--ink-3);border-top:1px solid var(--line);font-family:'JetBrains Mono Variable',monospace}
+.hero-cap strong{color:var(--ink-2);font-weight:600}
+/* Layout */
+.content-layout{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:28px;align-items:start}
+@media(max-width:840px){.content-layout{grid-template-columns:1fr}}
+/* Cards */
+.card{background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--radius);box-shadow:var(--shadow-card)}
+.section{padding:24px 26px;margin-bottom:20px;border-left:3px solid transparent;transition:border-color .15s}
+.section:hover{border-left-color:var(--accent)}
+.eyebrow{font-family:'JetBrains Mono Variable',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:10px}
+.section h2{font-size:21px;letter-spacing:-.02em;margin-bottom:10px;color:var(--ink)}
+.section .body{font-size:16.5px;line-height:1.8;color:var(--ink-2);white-space:pre-line}
+/* Stats */
+.stats-card{padding:20px;position:sticky;top:76px}
+.stats-grid{display:grid;gap:0}
+.stat{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}
+.stat:last-child{border-bottom:none}
+.stat-label{font-size:12.5px;color:var(--ink-3)}
+.stat-value{font-size:13.5px;font-weight:600;text-align:right;white-space:nowrap;font-family:'JetBrains Mono Variable',monospace;color:var(--ink)}
+/* APOD */
+.apod{margin:20px 0 28px;padding:24px 26px;background:var(--accent-tint);border:1px solid var(--line);border-radius:var(--radius)}
+.apod h3{font-size:18px;margin:6px 0 8px}
+.apod p{font-size:15px;color:var(--ink-2);line-height:1.65;margin-bottom:14px}
+/* Buttons */
+.pill{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:999px;font-size:13.5px;font-weight:600;text-decoration:none;transition:.15s;border:1px solid transparent}
+.pill-primary{background:var(--accent);color:#fff}
+.pill-primary:hover{filter:brightness(1.08)}
+/* Sources */
+.sources{padding:24px 26px;margin-top:4px}
+.sources ul{list-style:none}
+.sources li{margin-bottom:8px}
+.sources a{color:var(--accent);text-decoration:none;font-size:15px;font-weight:500;border-bottom:1px solid transparent;transition:.15s}
+.sources a:hover{border-bottom-color:var(--accent)}
+.sources li::before{content:'→ ';color:var(--ink-3);font-family:'JetBrains Mono Variable',monospace;font-size:13px}
+/* Footer */
+.footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--ink-3);font-size:13px}
+.footer a{color:var(--accent);text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+
+</style>
+<script>
+(function(){
+  var t;try{t=localStorage.getItem('ds-theme')}catch(e){}
+  if(t==='light')document.documentElement.classList.add('light');
+})();
+function setTheme(m){
+  try{localStorage.setItem('ds-theme',m)}catch(e){}
+  document.documentElement.classList.toggle('light',m==='light');
+  var a=document.getElementById('t-light'),b=document.getElementById('t-dark');
+  if(a&&b){a.classList.toggle('on',m==='light');b.classList.toggle('on',m!=='light');}
+}
+
+</script>
 </head>
 <body>
-  <main class="wrap">
-    <header class="mast">
-      <div class="badge">☄️</div>
-      <div>
-        <div class="kicker">Daily Space Field Note · Saturday, June 20, 2026</div>
-        <h1>Neptune</h1>
-        <p class="subtitle">The blue world with supersonic winds</p>
-      </div>
-    </header>
 
-    <section class="hero">
-      <div class="image-card">
-        <img src="https://images-assets.nasa.gov/image/PIA00049/PIA00049~small.jpg" alt="Neptune - Great Dark Spot, Scooter, Dark Spot 2">
-        <div class="caption"><strong>Neptune - Great Dark Spot, Scooter, Dark Spot 2</strong><br>This photograph of Neptune was reconstructed from two images taken by NASA Voyager 2. At the north top is the Great Dark Spot. http://photojournal.jpl.nasa.gov/catalog/PIA00049</div>
-      </div>
-      <aside class="card">
-        <div class="eyebrow">Quick scan</div>
-        <h2>What is it made of?</h2>
-        <p>Hydrogen, helium, methane atmosphere over an ice-rich mantle of water, ammonia, and methane around a rocky core.</p>
-        <div class="stats"><div class="stat"><span>Diameter</span><strong>49,244 km</strong></div>
-<div class="stat"><span>Year</span><strong>165 Earth years</strong></div>
-<div class="stat"><span>Winds</span><strong>up to ~2,000 km/h</strong></div>
-<div class="stat"><span>Color source</span><strong>methane + haze</strong></div></div>
-      </aside>
-    </section>
+<header class="hdr">
+  <div class="hdr-in">
+    <a class="brand" href="https://shenoyabhijith.github.io/daily-space-digest/"><span class="mark">☄</span>Daily Space Field Note</a>
+    <div class="tgl" role="group" aria-label="Theme">
+      <button id="t-light" aria-label="Light mode" onclick="setTheme('light')"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.2' stroke-linecap='round'><circle cx='12' cy='12' r='4' fill='currentColor' stroke='none'/><path d='M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4'/></svg></button>
+      <button id="t-dark" class="on" aria-label="Dark mode" onclick="setTheme('dark')"><svg viewBox='0 0 24 24' fill='currentColor'><path d='M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z'/></svg></button>
+    </div>
+  </div>
+</header>
 
-    <section class="grid">
-      <article class="card composition">
-        <div class="eyebrow">Why it’s fascinating</div>
-        <h2>The hook</h2>
-        <div class="spark">Neptune receives very little sunlight, yet it has some of the fastest winds in the Solar System. Something inside this cold blue planet is still powering wild weather.</div>
-      </article>
-      <article class="card">
-        <div class="eyebrow">Imagine this</div>
-        <h2>A tiny thought experiment</h2>
-        <p>Stand above Neptune with a transparent science visor. The colors are not just scenery — they are chemistry: gases, minerals, sunlight, and temperature writing a planetary fingerprint in front of you.</p>
-      </article>
-    </section>
+<div class="wrap">
 
-    
-        <section class="apod card">
-          <div class="eyebrow">NASA APOD side quest</div>
-          <h2>Daytime Moon Meets Evening Star</h2>
-          <p>Venus is now appearing on the celestial stage as Earth&#x27;s brilliant evening star, performing with the Moon, other wandering planets, and bright stars in western skies. For evening sky gazers on June 17, the celestial beacon rose after sunset close by a young, slender, crescent Moon. But from some locations the Moon could be seen to occult or pass in front of Venus. And from a backyard observatory in southern British Columbia, Canada, the lunar occultation was played out in daylight. This stunning telescopic snapshot captured a scene in dramatically cloudy skies, following Venus&#x27; hour long disappearance, as the evening star emerged beyond the b</p>
-          <a class="button ghost" href="https://apod.nasa.gov/apod/">Open NASA APOD</a>
-        </section>
-        
+  <header class="mast">
+    <p class="kicker">☄ Daily Space Field Note</p>
+    <h1>Neptune</h1>
+    <div class="subtitle">The blue world with supersonic winds</div>
+    <div class="meta">
+      <span>Saturday, June 20, 2026</span>
+      <span class="dot">·</span>
+      <span>~5 min read</span>
+    </div>
+  </header>
 
-    <section class="sources card">
-      <div class="eyebrow">Legit source trail</div>
-      <h2>Where this came from</h2>
-      <p>Primary references are NASA/JPL/ISRO or mission/science pages. Image search uses NASA’s public Image and Video Library; APOD uses NASA Astronomy Picture of the Day.</p>
-      <ul><li><a href="https://science.nasa.gov/neptune/">NASA Solar System Exploration — Neptune</a></li>
-<li><a href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/neptunefact.html">NASA NSSDC Neptune Fact Sheet</a></li>
-<li><a href="https://images.nasa.gov/search-results?q=Neptune%20Voyager%202%20NASA%20dark%20spot">NASA Image and Video Library</a></li>
-<li><a href="https://apod.nasa.gov/apod/">NASA Astronomy Picture of the Day</a></li></ul>
-    </section>
-    <div class="footer">Generated locally by Hermes Agent. External images remain credited to their source pages. Archive path: /opt/data/home/space-digest/</div>
-  </main>
+  <p class="lead">Neptune is the outermost planet, the most distant, and the coldest. Yet at the edge of the Solar System, where sunlight is 900 times dimmer than on Earth, Neptune hides an unsettling secret: its winds scream at supersonic speeds, making it the windiest place in the entire Solar System. It is the last planet discovered by mathematics, the first planet glimpsed by calculation before it was ever seen through a telescope, and the only planet visited a single time by a single spacecraft.</p>
+  <figure class="hero"><img src="https://images-assets.nasa.gov/image/PIA00049/PIA00049~small.jpg" alt="Neptune - Great Dark Spot, Scooter, Dark Spot 2" loading="lazy"><figcaption class="hero-cap"><strong>Neptune - Great Dark Spot, Scooter, Dark Spot 2</strong> — Neptune - Great Dark Spot, Scooter, Dark Spot 2</figcaption></figure>
+
+  <div class="content-layout">
+    <main>
+      <article class="card section">
+  <p class="eyebrow">Section 01</p>
+  <h2>Discovery &amp; Naming — A Triumph of Mathematics</h2>
+  <div class="body">Unlike the other planets, Neptune was not discovered by someone scanning the sky. It was predicted. In the 1820s, astronomers noticed that Uranus&#x27;s orbit didn&#x27;t quite match Newton&#x27;s predictions — it was being pulled off course by an unseen gravitational influence. Two mathematicians independently calculated where the missing planet must be: Urbain Le Verrier in France and John Couch Adams in England. On September 23, 1846, Johann Galle at the Berlin Observatory pointed his telescope to where Le Verrier predicted and found Neptune within one degree of that position. It was the most stunning confirmation of Newtonian gravity in the 19th century. The planet was named Neptune, after the Roman god of the sea, in keeping with the aquatic theme (the blue color made it appropriate). Its largest moon, Triton, was discovered just 17 days later.</div>
+</article><article class="card section">
+  <p class="eyebrow">Section 02</p>
+  <h2>Physical Profile — The Other Ice Giant</h2>
+  <div class="body">Neptune is almost Uranus&#x27;s twin in size (49,244 km vs 50,724 km), but it is noticeably more massive (17 Earth masses vs 14.5). Its deep blue color — much richer than Uranus&#x27;s pale cyan — is one of its most striking features, caused not just by methane absorption but by an unknown atmospheric component that gives the blue a vivid, dramatic intensity. Neptune&#x27;s internal structure is similar to Uranus&#x27;s: a hydrogen-helium atmosphere overlying a mantle of water, methane, and ammonia ices, with a rocky core of about 1.2 Earth masses. But unlike Uranus, Neptune radiates 2.6 times more heat than it receives from the Sun. This internal heat source is what drives Neptune&#x27;s ferocious weather — the planet&#x27;s atmosphere churns with storms, bands, and the fastest winds ever measured in the Solar System.</div>
+</article><article class="card section">
+  <p class="eyebrow">Section 03</p>
+  <h2>The Supersonic Atmosphere</h2>
+  <div class="body">Neptune&#x27;s winds are the fastest recorded on any planet in the Solar System, reaching 2,000 km/h — nearly double the speed of sound on Earth. To put that in perspective: a 2,000 km/h wind would circle Earth in 20 hours. These winds power massive storm systems. When Voyager 2 flew past in 1989, it spotted the Great Dark Spot — an enormous anticyclonic storm the size of Earth, resembling Jupiter&#x27;s Great Red Spot but in vivid blue. By the time the Hubble Space Telescope looked at Neptune just a few years later, the Great Dark Spot had vanished entirely, and new storms had appeared in other locations, revealing that Neptune&#x27;s atmosphere is far more dynamic than previously imagined. In 2018, Hubble spotted a new dark storm system forming in the northern hemisphere, with smaller companion clouds — nicknamed &quot;dark spots&quot; — that appear sporadically and evolve rapidly. Neptune&#x27;s atmosphere also hosts high-altitude white methane-ice clouds that cast shadows on the main cloud deck below, allowing scientists to measure cloud heights.</div>
+</article><article class="card section">
+  <p class="eyebrow">Section 04</p>
+  <h2>Triton — A Captured World from the Kuiper Belt</h2>
+  <div class="body">Triton is Neptune&#x27;s largest moon and one of the most bizarre objects in the Solar System. It orbits Neptune in a retrograde direction (opposite to Neptune&#x27;s rotation), which is a dead giveaway that it did not form around Neptune — it was captured from the Kuiper Belt. Triton is about 2,700 km across, slightly smaller than our Moon, and has a tenuous nitrogen atmosphere. Its surface temperature is -235°C — making it the coldest known surface in the Solar System. Yet despite the cold, Triton is geologically active: Voyager 2 imaged geysers of nitrogen gas erupting from the surface and being carried 8 km downwind by the thin atmosphere. The surface is a frozen landscape of nitrogen and methane ice, with a cantaloupe-like terrain of wrinkled, textured plains that no one fully explains. Triton is widely considered a Kuiper Belt object captured by Neptune&#x27;s gravity, making it a scientific Rosetta Stone for understanding both the ice giant system and the primordial bodies beyond Neptune.</div>
+</article><article class="card section">
+  <p class="eyebrow">Section 05</p>
+  <h2>Exploration History</h2>
+  <div class="body">Neptune has been visited by exactly one spacecraft: Voyager 2, which arrived on August 25, 1989, for a single flyby that transformed our understanding of the outer Solar System&#x27;s frontier. The flyby revealed six new moons, the Great Dark Spot, the supersonic winds, and the nitrogen geysers on Triton. And then there has been nothing for 37 years and counting. Despite being the most distant planet, Neptune is not particularly hard to reach — it is simply far away, requiring a 12-year journey from Earth even on an optimal trajectory. No dedicated mission to Neptune has ever been approved. But the 2023-2032 Planetary Science Decadal Survey identified a Uranus Orbiter and Probe as the top priority, and a Neptune mission is the logical follow-up. A proposed Trident mission would focus on Triton&#x27;s active plumes, and the planned Uranus mission could open the door for a Neptune flagship in the 2040s.</div>
+</article><article class="card section">
+  <p class="eyebrow">Section 06</p>
+  <h2>Why It Captivates Us</h2>
+  <div class="body">Neptune is the edge of the known — a world where the light takes four hours to reach, where winds blow at speeds that would strip the skin off any spacecraft, and where a frozen moon from the Kuiper Belt orbits backwards, kept warm enough by tidal forces to breathe thin geysers in the perpetual twilight. It was found by mathematics, visited once, and then — for an entire human lifetime — left alone. Neptune represents everything we still don&#x27;t know about our own Solar System. It is a reminder that the frontiers are not all in the past.</div>
+</article>
+      
+    </main>
+    <aside>
+      <aside class="card stats-card">
+  <p class="eyebrow">Quick Facts</p>
+  <div class="stats-grid"><div class="stat"><span class="stat-label">Diameter</span><span class="stat-value">49,244 km</span></div><div class="stat"><span class="stat-label">Mass</span><span class="stat-value">17 Earths</span></div><div class="stat"><span class="stat-label">Winds</span><span class="stat-value">up to 2,000 km/h</span></div><div class="stat"><span class="stat-label">Year</span><span class="stat-value">165 Earth years</span></div><div class="stat"><span class="stat-label">Day</span><span class="stat-value">16.1 hours</span></div><div class="stat"><span class="stat-label">Known moons</span><span class="stat-value">16</span></div><div class="stat"><span class="stat-label">Visited by</span><span class="stat-value">Voyager 2 (1989)</span></div><div class="stat"><span class="stat-label">Internal heat</span><span class="stat-value">2.6x received sunlight</span></div></div>
+</aside>
+    </aside>
+  </div>
+
+  <section class="card sources">
+    <p class="eyebrow">Sources &amp; Further Reading</p>
+    <ul><li><a href="https://science.nasa.gov/neptune/">NASA Solar System — Neptune</a></li>
+<li><a href="https://science.nasa.gov/mission/voyager/">NASA Voyager 2</a></li>
+<li><a href="https://science.nasa.gov/neptune/moons/triton/">NASA Triton Overview</a></li>
+<li><a href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/neptunefact.html">JPL Neptune Fact Sheet</a></li>
+<li><a href="https://images.nasa.gov/">NASA Image and Video Library</a></li>
+</ul>
+  </section>
+
+  <footer class="footer">
+    <span>Generated by <a href="https://shenoyabhijith.github.io/daily-space-digest/">Daily Space Digest</a></span>
+    <span>Also see <a href="https://shenoyabhijith.github.io/indian-mythology-digest/">Indian Mythology Digest</a></span>
+  </footer>
+
+</div>
 </body>
 </html>
